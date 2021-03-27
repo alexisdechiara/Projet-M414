@@ -5,26 +5,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".LessonsActivity"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:gravity="bottom">
 
-    <LinearLayout
-            android:orientation="vertical"
+    <Button
+            android:text="Comment faire des additions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/layoutMultiplication"
-            android:layout_margin="10sp">
+            android:id="@+id/additionButton"
+            android:padding="16dp" />
 
-        <ImageButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:srcCompat="@tools:sample/avatars"
-                android:id="@+id/ImageMultipication" />
+    <Button
+            android:text="Voir les tables de multiplications"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonMultiplication"
+            android:padding="16dp" />
 
-        <Button
-                android:text="Voir les tables de multiplications"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/buttonMultiplication"
-                android:padding="5sp" />
-    </LinearLayout>
 </LinearLayout>

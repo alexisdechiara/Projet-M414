@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Projet M414</string>
+    <string name="explainAddition">Pour réaliser une addition, il faut mettre chaque nombre dans une ligne, les unes en dessous des autres. Ensuite, on additionne colonne par colonne en commençant par la droite : lorsque le résultat dépasse la dizaine alors on ajoute une "retenue" correspondant à la valeur de la dizaine pour la colonne suivante</string>
 </resources>

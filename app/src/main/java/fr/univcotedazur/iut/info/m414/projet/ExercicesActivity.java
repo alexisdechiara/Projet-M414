@@ -4,12 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MultiplicationActivity extends AppCompatActivity {
+public class ExercicesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_multiplication);
-        getSupportFragmentManager().beginTransaction().replace(R.id.value, new FragmentValue()).commit();
+        setContentView(R.layout.activity_exercices);
     }
 }
