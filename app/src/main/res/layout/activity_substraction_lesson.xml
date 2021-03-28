@@ -14,7 +14,7 @@
             android:layout_margin="10dp">
 
         <TextView
-                android:text="Comment poser une addition"
+                android:text="Comment poser une soustraction"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/titleAdditionLessons"
@@ -26,7 +26,7 @@
                 android:layout_marginTop="10dp" />
 
         <TextView
-                android:text="@string/explainAddition"
+                android:text="@string/explainSubstraction"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/explainAddition"
@@ -37,7 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                app:videoId="YspaUBOGVHk"
+                app:videoId="YsBN6H8cfeI"
                 app:autoPlay="false"
                 app:showYouTubeButton="false"
                 app:handleNetworkEvents="true"
@@ -64,7 +64,7 @@
                 android:id="@+id/exempleView1">
 
             <TextView
-                    android:text="Premièrement on regarde la première colonne de droite et on addition chaque valeurs de la colonne"
+                    android:text="Premièrement on regarde la première colonne de droite et on substraction chaque valeurs de la colonne"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/exo1_1" />
@@ -121,7 +121,7 @@
                 android:id="@+id/exempleView2">
 
             <TextView
-                    android:text="Premièrement on regarde la première colonne de droite et on addition chaque valeurs de la colonne, comme la somme est suppérieur à 10 alors on ajoute 1 retenu à la colonne suivante"
+                    android:text="Premièrement on regarde la première colonne de droite et on soustrait chaque valeurs de la colonne, comme la somme est suppérieur à 10 alors on ajoute 1 retenu à la colonne suivante"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/exo2_1" />

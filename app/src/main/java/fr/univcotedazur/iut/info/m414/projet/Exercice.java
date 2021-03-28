@@ -4,6 +4,6 @@ import java.util.ArrayList;
 
 public class Exercice {
     private String titre;
-    private String number;
+    private boolean sendSMS;
     private ArrayList<String> questions;
 }

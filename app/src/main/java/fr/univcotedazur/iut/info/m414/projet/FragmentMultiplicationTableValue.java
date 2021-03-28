@@ -10,9 +10,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class FragmentValue extends Fragment implements FragmentValueInterface {
+public class FragmentMultiplicationTableValue extends Fragment implements FragmentValueInterface {
 
-    public FragmentValue(){
+    public FragmentMultiplicationTableValue(){
     }
 
     @Nullable
@@ -23,7 +23,7 @@ public class FragmentValue extends Fragment implements FragmentValueInterface {
         rootView.findViewById(R.id.valid).setOnClickListener(v -> {
             if(value.getText().length() != 0){
                 int table = Integer.parseInt(value.getText().toString());
-                Fragment frag = new FragmentContent();
+                Fragment frag = new MultiplicationTableContent();
                 Bundle args = new Bundle();
                 args.putInt(KEY, table);
                 frag.setArguments(args);
