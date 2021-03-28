@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CreateExerciceActivity"
+    android:gravity="center"
+    android:layout_margin="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:layout_marginBottom="50dp"
+        android:text="Choisissez le type d'exercice"/>
+
+    <Button
+        android:text="Addition"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:id="@+id/addition_button_exercice" />
+
+    <Button
+        android:text="Soustraction"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:id="@+id/subtraction_button_exercice" />
+
+    <Button
+        android:text="Multiplication"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:id="@+id/multiplication_button_exercice" />
+
+    <Button
+        android:text="Division"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:id="@+id/division_button_exercice" />
+
+</LinearLayout>

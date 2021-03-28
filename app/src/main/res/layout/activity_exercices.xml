@@ -32,4 +32,11 @@
             android:layout_width="match_parent"
             android:layout_height="75dp"
             android:id="@+id/division_button" />
+
+    <Button
+            android:text="Créer un exercice"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_marginTop="100dp"
+            android:id="@+id/create_exercice_button" />
 </LinearLayout>

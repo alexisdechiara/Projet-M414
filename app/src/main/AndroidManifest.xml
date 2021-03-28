@@ -12,6 +12,8 @@
         <activity android:name=".AdditionLessonActivity"></activity>
         <activity android:name=".ExercicesActivity" />
         <activity android:name=".LessonsActivity" />
+        <activity android:name=".CreateExerciceActivity"/>
+        <activity android:name=".CreateSpecificExerciceActivity"/>
         <activity android:name=".MultiplicationLessonActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
