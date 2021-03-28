@@ -9,12 +9,15 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.ProjetM414">
-        <activity android:name=".AdditionLessonActivity"></activity>
+        <activity android:name=".AdditionLessonActivity"/>
+        <activity android:name=".SubstractionLessonActivity"/>
+        <activity android:name=".MultiplicationLessonActivity"/>
+        <activity android:name=".DivisionLessonActivity"/>
         <activity android:name=".ExercicesActivity" />
         <activity android:name=".LessonsActivity" />
         <activity android:name=".CreateExerciceActivity"/>
         <activity android:name=".CreateSpecificExerciceActivity"/>
-        <activity android:name=".MultiplicationLessonActivity" />
+        <activity android:name=".MultiplicationTableLessonActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

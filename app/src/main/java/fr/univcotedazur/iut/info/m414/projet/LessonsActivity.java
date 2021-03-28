@@ -8,23 +8,35 @@ import android.widget.Button;
 
 public class LessonsActivity extends AppCompatActivity {
 
-    Button multiplication;
     Button addition;
+    Button substraction;
+    Button multiplication;
+    Button division;
+    Button multiplicationTable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lessons);
 
-        multiplication = findViewById(R.id.buttonMultiplication);
         addition = findViewById(R.id.additionButton);
+        substraction = findViewById(R.id.substractionButton);
+        multiplication = findViewById(R.id.multiplicationButton);
+        division = findViewById(R.id.divisionButton);
+        multiplicationTable = findViewById(R.id.multiplicationTableButton);
 
-        Intent multiplicationActivity = new Intent(getApplicationContext(), MultiplicationLessonActivity.class);
+        Intent multiplicationTableActivity = new Intent(getApplicationContext(), MultiplicationTableLessonActivity.class);
         Intent additionActivity = new Intent(getApplicationContext(), AdditionLessonActivity.class);
+        Intent substractionActivity = new Intent(getApplicationContext(), SubstractionLessonActivity.class);
+        Intent multiplicationActivity = new Intent(getApplicationContext(), MultiplicationLessonActivity.class);
+        Intent divisionActivity = new Intent(getApplicationContext(), DivisionLessonActivity.class);
 
 
-        multiplication.setOnClickListener(v -> startActivity(multiplicationActivity));
         addition.setOnClickListener(v -> startActivity(additionActivity));
+        substraction.setOnClickListener(v -> startActivity(substractionActivity));
+        multiplication.setOnClickListener(v -> startActivity(multiplicationActivity));
+        division.setOnClickListener(v -> startActivity(divisionActivity));
+        multiplicationTable.setOnClickListener(v -> startActivity(multiplicationTableActivity));
 
     }
 }

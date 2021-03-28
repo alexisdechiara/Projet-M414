@@ -10,31 +10,38 @@
         android:gravity="center">
 
     <Button
-            android:text="Comment faire des additions"
+            android:text="Comment poser une addition"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/additionButton"
             android:padding="16dp" />
 
     <Button
-            android:text="Comment faire des soustractions"
+            android:text="Comment poser une soustraction"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/substractButton"
+            android:id="@+id/substractionButton"
             android:padding="16dp" />
 
     <Button
-            android:text="Comment faire des divisions euclidienne"
+            android:text="Comment poser une multiplication"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/multiplicationButton"
+            android:padding="16dp" />
+
+    <Button
+            android:text="Comment poser une division euclidienne"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/divisionButton"
             android:padding="16dp" />
 
     <Button
-            android:text="Voir les tables de multiplications"
+            android:text="Table de multiplication"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/buttonMultiplication"
+            android:id="@+id/multiplicationTableButton"
             android:padding="16dp" />
 
 </LinearLayout>
