@@ -9,6 +9,7 @@
         android:id="@+id/valeur1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="number"
         android:hint="1ère valeur"/>
 
     <TextView
@@ -20,6 +21,7 @@
         android:id="@+id/valeur2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="number"
         android:hint="2ème valeur"/>
 
 </LinearLayout>

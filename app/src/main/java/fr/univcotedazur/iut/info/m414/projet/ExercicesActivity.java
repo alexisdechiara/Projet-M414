@@ -13,6 +13,12 @@ public class ExercicesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercices);
 
+        Button addition = findViewById(R.id.addition_button);
+
+        Intent createAdditionActivity = new Intent(getApplicationContext(), AdditionExerciceActivity.class);
+
+        addition.setOnClickListener(v -> startActivity(createAdditionActivity));
+
         Button createExercice = findViewById(R.id.create_exercice_button);
 
         Intent createExerciceActivity = new Intent(getApplicationContext(), CreateExerciceActivity.class);
