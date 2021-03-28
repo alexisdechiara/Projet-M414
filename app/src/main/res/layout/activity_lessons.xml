@@ -7,13 +7,27 @@
         tools:context=".LessonsActivity"
         android:orientation="vertical"
         android:layout_margin="10dp"
-        android:gravity="bottom">
+        android:gravity="center">
 
     <Button
             android:text="Comment faire des additions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/additionButton"
+            android:padding="16dp" />
+
+    <Button
+            android:text="Comment faire des soustractions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/substractButton"
+            android:padding="16dp" />
+
+    <Button
+            android:text="Comment faire des divisions euclidienne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/divisionButton"
             android:padding="16dp" />
 
     <Button
