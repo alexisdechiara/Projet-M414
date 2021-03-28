@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
@@ -8,33 +8,158 @@
         android:orientation="vertical"
         android:padding="10dp">
 
-    <TextView
-            android:text="Comment faire des additions"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/titleAdditionLessons"
-            android:textSize="24sp"
-            android:gravity="center"
-            android:layout_marginBottom="25dp"
-            android:textColor="#3F51B5"
-            android:textStyle="bold" />
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
 
-    <TextView
-            android:text="@string/explainAddition"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/explainAddition"
-            android:layout_marginBottom="10dp" />
+            <TextView
+                    android:text="Comment faire des additions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/titleAdditionLessons"
+                    android:textSize="24sp"
+                    android:gravity="center"
+                    android:layout_marginBottom="25dp"
+                    android:textColor="#3F51B5"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp" />
 
-    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
-            android:id="@+id/youtube_player_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            <TextView
+                    android:text="@string/explainAddition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/explainAddition"
+                    android:layout_marginBottom="10dp" />
 
-            app:videoId="YspaUBOGVHk"
-            app:autoPlay="false"
-            app:showYouTubeButton="false"
-            app:handleNetworkEvents="true"
-            app:showFullScreenButton="false" />
+            <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                    android:id="@+id/youtube_player_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
 
-</LinearLayout>
+                    app:videoId="YspaUBOGVHk"
+                    app:autoPlay="false"
+                    app:showYouTubeButton="false"
+                    app:handleNetworkEvents="true"
+                    app:showFullScreenButton="false"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp">
+
+            </com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>
+
+            <ToggleButton
+                    android:textOn="Exemple 1"
+                    android:textOff="Exemple 1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/example1"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp" />
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    android:id="@+id/exempleView1">
+
+                <TextView
+                        android:text="Premièrement on regarde la première colonne de droite et on addition chaque valeurs de la colonne"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/exo1_1" />
+
+                <ImageView
+                        android:src="@drawable/exo1_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imageExo_1_1"
+                        android:layout_marginBottom="10dp" />
+
+                <TextView
+                        android:text="On passe la colonne suivante et on fait le même calcul"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/exo1_2" />
+
+                <ImageView
+                        android:src="@drawable/exo1_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imageExo_1_2"
+                        android:layout_marginBottom="10dp" />
+
+                <TextView
+                        android:text="S'il n'y a rien dans un case alors cela correspond à un zéro"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/exo1_3" />
+
+                <ImageView
+                        android:src="@drawable/exo1_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imageExo_1_3"
+                        android:layout_marginBottom="10dp" />
+
+            </LinearLayout>
+
+            <ToggleButton
+                    android:textOn="Exemple 2"
+                    android:textOff="Exemple 2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/example2"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp" />
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    android:id="@+id/exempleView2">
+
+                <TextView
+                        android:text="Premièrement on regarde la première colonne de droite et on addition chaque valeurs de la colonne, comme la somme est suppérieur à 10 alors on ajoute 1 retenu à la colonne suivante"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/exo2_1" />
+
+                <ImageView
+                        android:src="@drawable/exo2_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imageExo_2_1"
+                        android:layout_marginBottom="10dp" />
+
+                <TextView
+                        android:text="On passe la colonne suivante et on fait pareil sauf que cette faut on rajoute la retenu dans notre calcul, ici la somme dépasse aussi 10 donc on rajoute une retenu à la colonne suivante"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/exo2_2" />
+
+                <ImageView
+                        android:src="@drawable/exo2_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imageExo_2_2"
+                        android:layout_marginBottom="10dp" />
+
+                <TextView
+                        android:text="S'il n'y a rien dans un case alors cela correspond à un zéro, comme il y a ici une retenu cela nous donne 2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/exo2_3" />
+
+                <ImageView
+                        android:src="@drawable/exo2_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imageExo_2_3"
+                        android:layout_marginBottom="10dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+</ScrollView>
