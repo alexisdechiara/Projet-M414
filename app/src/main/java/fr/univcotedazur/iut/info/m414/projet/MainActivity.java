@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         Intent exercicesActivity = new Intent(MainActivity.this, ExercicesActivity.class);
 
         lessons.setOnClickListener(v -> startActivity(lessonsActivity));
-        lessons.setOnClickListener(v -> startActivity(exercicesActivity));
+        exercices.setOnClickListener(v -> startActivity(exercicesActivity));
 
     }
 }

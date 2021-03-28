@@ -19,8 +19,8 @@ public class LessonsActivity extends AppCompatActivity {
         multiplication = findViewById(R.id.buttonMultiplication);
         addition = findViewById(R.id.additionButton);
 
-        Intent multiplicationActivity = new Intent(getApplicationContext(), MultiplicationLessonsActivity.class);
-        Intent additionActivity = new Intent(getApplicationContext(), AdditionLessonsActivity.class);
+        Intent multiplicationActivity = new Intent(getApplicationContext(), MultiplicationLessonActivity.class);
+        Intent additionActivity = new Intent(getApplicationContext(), AdditionLessonActivity.class);
 
 
         multiplication.setOnClickListener(v -> startActivity(multiplicationActivity));
