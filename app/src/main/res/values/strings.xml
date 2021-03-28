@@ -16,5 +16,9 @@
     • On additionne enfin les résultats obtenus, sans oublier les retenues, de droite à gauche.
 
     </string>
+    <string name="explainDivision">Effectuer la division euclidienne d’un nombre entier a par un nombre entier b, c’est trouver le quotient entier (noté q) et le reste (noté r) de la division de a par b.Le nombre a est appelé le dividende et le nombre b est appelé le diviseur.</string>
+    <string name="divisionExo1">On commence par poser la division de 273 par 17. On observe que 2 est un nombre trop petit pour contenir 17, on commence donc par choisir les deux premiers chiffres du dividende.</string>
+    <string name="divisionExo2">27 contient une seule fois 17.On écrit donc le chiffre 1 au quotient et on soustrait 1 x 17 = 17 à 27. Il reste 10.</string>
+    <string name="divisionExo3">On abaisse ensuite un chiffre supplémentaire au dividende et on cherche combien de fois 103 contient 17.\nOn a 6 x 17 = 102, on inscrit donc le 6 au quotient et on soustrait 102 à 103.\n Le quotient entier de 273 par 17 est donc de 16 et son reste est 1.</string>
 
 </resources>

@@ -1,4 +1,4 @@
-package fr.univcotedazur.iut.info.m414.projet;
+package fr.univcotedazur.iut.info.m414.projet.lessons;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import fr.univcotedazur.iut.info.m414.projet.R;
+
 public class FragmentMultiplicationTableValue extends Fragment implements FragmentValueInterface {
 
     public FragmentMultiplicationTableValue(){
@@ -18,7 +20,7 @@ public class FragmentMultiplicationTableValue extends Fragment implements Fragme
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_value,container, false);
+        View rootView = inflater.inflate(R.layout.fragment_value, container, false);
         EditText value = rootView.findViewById(R.id.valueInput);
         rootView.findViewById(R.id.valid).setOnClickListener(v -> {
             if(value.getText().length() != 0){

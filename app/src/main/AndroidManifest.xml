@@ -10,15 +10,15 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.ProjetM414"
             android:networkSecurityConfig="@xml/network_security_config">
-        <activity android:name=".AdditionLessonActivity"/>
-        <activity android:name=".SubstractionLessonActivity"/>
-        <activity android:name=".MultiplicationLessonActivity"/>
-        <activity android:name=".DivisionLessonActivity"/>
-        <activity android:name=".ExercicesActivity" />
-        <activity android:name=".LessonsActivity" />
-        <activity android:name=".CreateExerciceActivity"/>
-        <activity android:name=".CreateSpecificExerciceActivity"/>
-        <activity android:name=".MultiplicationTableLessonActivity" />
+        <activity android:name=".lessons.AdditionLessonActivity"/>
+        <activity android:name=".lessons.SubstractionLessonActivity"/>
+        <activity android:name=".lessons.MultiplicationLessonActivity"/>
+        <activity android:name=".lessons.DivisionLessonActivity"/>
+        <activity android:name=".exercices.ExercicesActivity" />
+        <activity android:name=".lessons.LessonsActivity" />
+        <activity android:name=".exercices.CreateExerciceActivity"/>
+        <activity android:name=".exercices.CreateSpecificExerciceActivity"/>
+        <activity android:name=".lessons.MultiplicationTableLessonActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

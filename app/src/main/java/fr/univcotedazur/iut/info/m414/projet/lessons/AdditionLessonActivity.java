@@ -1,15 +1,17 @@
-package fr.univcotedazur.iut.info.m414.projet;
+package fr.univcotedazur.iut.info.m414.projet.lessons;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ToggleButton;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 
-public class SubstractionLessonActivity extends AppCompatActivity {
+import fr.univcotedazur.iut.info.m414.projet.R;
+
+public class AdditionLessonActivity extends AppCompatActivity {
 
     YouTubePlayerView youTubePlayerView;
     ToggleButton exempleButton1;
@@ -20,7 +22,7 @@ public class SubstractionLessonActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_substraction_lesson);
+        setContentView(R.layout.activity_addition_lesson);
 
         youTubePlayerView = findViewById(R.id.youtube_player_view);
         getLifecycle().addObserver(youTubePlayerView);

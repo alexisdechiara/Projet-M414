@@ -1,4 +1,4 @@
-package fr.univcotedazur.iut.info.m414.projet;
+package fr.univcotedazur.iut.info.m414.projet.lessons;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,6 +12,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
+
+import fr.univcotedazur.iut.info.m414.projet.R;
 
 public class MultiplicationTableContent extends Fragment implements FragmentValueInterface {
 
@@ -29,7 +31,7 @@ public class MultiplicationTableContent extends Fragment implements FragmentValu
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_content,container, false);
+        View rootView = inflater.inflate(R.layout.fragment_content, container, false);
         ArrayList<String> list = new ArrayList<>();
         for (int i = 0 ; i <= 100 ; i++) list.add(value + " * " + i + " = " + value * i);
         ListView listView = rootView.findViewById(R.id.contentListView);

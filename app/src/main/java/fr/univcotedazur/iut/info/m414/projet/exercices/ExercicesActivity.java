@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
+import fr.univcotedazur.iut.info.m414.projet.lessons.AdditionExerciceActivity;
+
 public class ExercicesActivity extends AppCompatActivity {
 
     @Override

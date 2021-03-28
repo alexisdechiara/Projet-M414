@@ -1,4 +1,4 @@
-package fr.univcotedazur.iut.info.m414.projet;
+package fr.univcotedazur.iut.info.m414.projet.lessons;
 
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +8,8 @@ import android.widget.ToggleButton;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
+
+import fr.univcotedazur.iut.info.m414.projet.R;
 
 public class MultiplicationLessonActivity extends AppCompatActivity {
 

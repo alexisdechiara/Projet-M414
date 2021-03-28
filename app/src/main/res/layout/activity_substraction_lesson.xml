@@ -4,7 +4,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".AdditionLessonActivity"
+        tools:context=".lessons.AdditionLessonActivity"
         android:orientation="vertical">
 
     <LinearLayout
@@ -21,7 +21,7 @@
                 android:textSize="24sp"
                 android:gravity="center"
                 android:layout_marginBottom="25dp"
-                android:textColor="#3F51B5"
+                android:textColor="@color/design_default_color_primary"
                 android:textStyle="bold"
                 android:layout_marginTop="10dp" />
 
@@ -48,13 +48,12 @@
         </com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>
 
         <ToggleButton
-                android:textOn="Exemple 1"
-                android:textOff="Exemple 1"
+                android:textOn="Exemple sans retenue"
+                android:textOff="Exemple sans retenue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/example1"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp" />
+                android:layout_marginTop="10dp" />
 
         <LinearLayout
                 android:orientation="vertical"
@@ -63,55 +62,21 @@
                 android:visibility="gone"
                 android:id="@+id/exempleView1">
 
-            <TextView
-                    android:text="Premièrement on regarde la première colonne de droite et on substraction chaque valeurs de la colonne"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/exo1_1" />
-
             <ImageView
-                    android:src="@drawable/exo1_1"
+                    android:src="@drawable/subtraction_exo_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/imageExo_1_1"
-                    android:layout_marginBottom="10dp" />
-
-            <TextView
-                    android:text="On passe la colonne suivante et on fait le même calcul"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/exo1_2" />
-
-            <ImageView
-                    android:src="@drawable/exo1_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/imageExo_1_2"
-                    android:layout_marginBottom="10dp" />
-
-            <TextView
-                    android:text="S'il n'y a rien dans un case alors cela correspond à un zéro"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/exo1_3" />
-
-            <ImageView
-                    android:src="@drawable/exo1_3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/imageExo_1_3"
-                    android:layout_marginBottom="10dp" />
+                    android:id="@+id/imageExo_1" />
 
         </LinearLayout>
 
         <ToggleButton
-                android:textOn="Exemple 2"
-                android:textOff="Exemple 2"
+                android:textOn="Exemple avec retenue"
+                android:textOff="Exemple avec retenue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/example2"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp" />
+                android:layout_marginTop="10dp"/>
 
         <LinearLayout
                 android:orientation="vertical"
@@ -120,44 +85,11 @@
                 android:visibility="gone"
                 android:id="@+id/exempleView2">
 
-            <TextView
-                    android:text="Premièrement on regarde la première colonne de droite et on soustrait chaque valeurs de la colonne, comme la somme est suppérieur à 10 alors on ajoute 1 retenu à la colonne suivante"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/exo2_1" />
-
             <ImageView
-                    android:src="@drawable/exo2_1"
+                    android:src="@drawable/subtraction_exo_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/imageExo_2_1"
-                    android:layout_marginBottom="10dp" />
-
-            <TextView
-                    android:text="On passe la colonne suivante et on fait pareil sauf que cette faut on rajoute la retenu dans notre calcul, ici la somme dépasse aussi 10 donc on rajoute une retenu à la colonne suivante"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/exo2_2" />
-
-            <ImageView
-                    android:src="@drawable/exo2_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/imageExo_2_2"
-                    android:layout_marginBottom="10dp" />
-
-            <TextView
-                    android:text="S'il n'y a rien dans un case alors cela correspond à un zéro, comme il y a ici une retenu cela nous donne 2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/exo2_3" />
-
-            <ImageView
-                    android:src="@drawable/exo2_3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/imageExo_2_3"
-                    android:layout_marginBottom="10dp" />
+                    android:id="@+id/imageExo_2"/>
 
         </LinearLayout>
 

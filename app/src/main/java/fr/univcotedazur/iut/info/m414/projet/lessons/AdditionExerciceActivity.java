@@ -1,4 +1,4 @@
-package fr.univcotedazur.iut.info.m414.projet;
+package fr.univcotedazur.iut.info.m414.projet.lessons;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -18,6 +18,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 import java.util.Random;
+
+import fr.univcotedazur.iut.info.m414.projet.R;
 
 public class AdditionExerciceActivity extends AppCompatActivity {
     @Override

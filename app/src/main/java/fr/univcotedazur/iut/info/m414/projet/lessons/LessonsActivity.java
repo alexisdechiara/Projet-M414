@@ -1,10 +1,12 @@
-package fr.univcotedazur.iut.info.m414.projet;
+package fr.univcotedazur.iut.info.m414.projet.lessons;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+
+import fr.univcotedazur.iut.info.m414.projet.R;
 
 public class LessonsActivity extends AppCompatActivity {
 
