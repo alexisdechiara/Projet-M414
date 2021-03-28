@@ -1,4 +1,4 @@
-package fr.univcotedazur.iut.info.m414.projet;
+package fr.univcotedazur.iut.info.m414.projet.exercices;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
+import fr.univcotedazur.iut.info.m414.projet.R;
 import fr.univcotedazur.iut.info.m414.projet.lessons.AdditionExerciceActivity;
 
 public class ExercicesActivity extends AppCompatActivity {

@@ -1,4 +1,4 @@
-package fr.univcotedazur.iut.info.m414.projet;
+package fr.univcotedazur.iut.info.m414.projet.exercices;
 
 import android.content.Context;
 import android.text.Editable;
@@ -13,6 +13,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import fr.univcotedazur.iut.info.m414.projet.R;
 
 public class ExerciceAdapter extends BaseAdapter {
     private String type;

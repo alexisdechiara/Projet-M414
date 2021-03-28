@@ -1,10 +1,12 @@
-package fr.univcotedazur.iut.info.m414.projet;
+package fr.univcotedazur.iut.info.m414.projet.exercices;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import fr.univcotedazur.iut.info.m414.projet.R;
 
 public class CreateExerciceActivity extends AppCompatActivity {
     @Override
