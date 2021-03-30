@@ -21,7 +21,6 @@ public class CheckResults extends AsyncTask<Void, Void, Void> {
     private final String[] calcul;
 
     private final int[] result = new int[10];
-    private boolean isFinished;
 
     public CheckResults(String[] calcul) {
         this.calcul = calcul;
@@ -33,16 +32,6 @@ public class CheckResults extends AsyncTask<Void, Void, Void> {
             Log.d("results encore", result[i] + "");
         }
         return result;
-    }
-
-    public boolean isFinished() {
-        return isFinished;
-    }
-
-    @Override
-    protected void onPreExecute() {
-        super.onPreExecute();
-        isFinished = false;
     }
 
     @Override
@@ -108,11 +97,5 @@ public class CheckResults extends AsyncTask<Void, Void, Void> {
             e.printStackTrace();
         }
         return null;
-    }
-
-    @Override
-    protected void onPostExecute(Void result) {
-        super.onPostExecute(result);
-        isFinished = true;
     }
 }

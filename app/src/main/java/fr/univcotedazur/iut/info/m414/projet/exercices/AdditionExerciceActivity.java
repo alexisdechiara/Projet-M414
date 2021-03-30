@@ -14,18 +14,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 import fr.univcotedazur.iut.info.m414.projet.CheckResults;
 import fr.univcotedazur.iut.info.m414.projet.R;
 
-import static java.lang.Thread.sleep;
-
 public class AdditionExerciceActivity extends AppCompatActivity {
 
-    private Button confirm;
     private final ArrayList<EditText> result = new ArrayList<>();
     private final ArrayList<TextView> answer = new ArrayList<>();
+    private Button confirm;
     private ProgressBar progress;
 
     @Override
@@ -100,10 +100,10 @@ public class AdditionExerciceActivity extends AppCompatActivity {
                 Log.d("calculs a la base", Arrays.toString(tab));
                 CheckResults cr = new CheckResults(tab);
                 cr.execute();
-
-                while (!cr.isFinished()) {
-                    try { sleep(100); }
-                    catch (InterruptedException e) { e.printStackTrace(); }
+                try {
+                    cr.get(1000, TimeUnit.MILLISECONDS);
+                } catch (ExecutionException | InterruptedException | TimeoutException e) {
+                    e.printStackTrace();
                 }
                 int[] results = cr.getResult();
                 int finalScore = 0;
