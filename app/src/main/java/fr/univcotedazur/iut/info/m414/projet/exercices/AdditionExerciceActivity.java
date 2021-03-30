@@ -1,4 +1,4 @@
-package fr.univcotedazur.iut.info.m414.projet.lessons;
+package fr.univcotedazur.iut.info.m414.projet.exercices;
 
 import android.os.AsyncTask;
 import android.os.Bundle;

@@ -15,6 +15,7 @@
         <activity android:name=".lessons.MultiplicationLessonActivity"/>
         <activity android:name=".lessons.DivisionLessonActivity"/>
         <activity android:name=".exercices.ExercicesActivity" />
+        <activity android:name=".exercices.AdditionExerciceActivity" />
         <activity android:name=".lessons.LessonsActivity" />
         <activity android:name=".exercices.CreateExerciceActivity"/>
         <activity android:name=".exercices.CreateSpecificExerciceActivity"/>
