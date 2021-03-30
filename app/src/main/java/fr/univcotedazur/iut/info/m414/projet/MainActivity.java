@@ -7,8 +7,6 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import org.json.JSONException;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -29,44 +27,47 @@ public class MainActivity extends AppCompatActivity {
     ImageButton settings;
 
 
-    public static String checkResult(String[] calcul) throws IOException, JSONException {
+    public static String checkResult(String[] calcul) {
         String query = "http://api.mathjs.org/v4/";
-        URL obj = new URL(query);
 
-        HttpURLConnection postConnection = (HttpURLConnection) obj.openConnection();
-        postConnection.setRequestMethod("POST");
-        postConnection.setRequestProperty("Content-Type", "application/json");
-
-        StringBuilder POST_PARAMS = new StringBuilder("{" + "\"expr\": [");
-        for (int i = 0; i < calcul.length; i++) {
-            calcul[i] = calcul[i].replaceAll("\\s+", "");
-            POST_PARAMS.append("\"").append(calcul[i]).append("\"");
-            if (i != calcul.length - 1) {
-                POST_PARAMS.append(", ");
+        try {
+            URL obj = new URL(query);
+            HttpURLConnection postConnection = null;
+            postConnection = (HttpURLConnection) obj.openConnection();
+            postConnection.setRequestMethod("POST");
+            postConnection.setRequestProperty("Content-Type", "application/json");
+            StringBuilder POST_PARAMS = new StringBuilder("{" + "\"expr\": [");
+            for (int i = 0; i < calcul.length; i++) {
+                calcul[i] = calcul[i].replaceAll("\\s+", "");
+                POST_PARAMS.append("\"").append(calcul[i]).append("\"");
+                if (i != calcul.length - 1) {
+                    POST_PARAMS.append(", ");
+                }
             }
-        }
-        POST_PARAMS.append("]}");
+            POST_PARAMS.append("]}");
 
-        postConnection.setDoOutput(true);
-        OutputStream os = postConnection.getOutputStream();
-        os.write(POST_PARAMS.toString().getBytes());
-        os.flush();
-        os.close();
+            postConnection.setDoOutput(true);
+            OutputStream os = postConnection.getOutputStream();
+            os.write(POST_PARAMS.toString().getBytes());
+            os.flush();
+            os.close();
 
+            int responseCode = postConnection.getResponseCode();
 
-        int responseCode = postConnection.getResponseCode();
+            if (responseCode == HttpURLConnection.HTTP_OK) {
+                BufferedReader in = new BufferedReader(new InputStreamReader(postConnection.getInputStream()));
+                String inputLine;
+                StringBuilder response = new StringBuilder();
 
-        if (responseCode == HttpURLConnection.HTTP_OK) {
-            BufferedReader in = new BufferedReader(new InputStreamReader(postConnection.getInputStream()));
-            String inputLine;
-            StringBuilder response = new StringBuilder();
+                while ((inputLine = in.readLine()) != null) {
+                    response.append(inputLine);
+                }
+                in.close();
 
-            while ((inputLine = in.readLine()) != null) {
-                response.append(inputLine);
+                return response.toString();
             }
-            in.close();
-
-            return response.toString();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         return null;
     }

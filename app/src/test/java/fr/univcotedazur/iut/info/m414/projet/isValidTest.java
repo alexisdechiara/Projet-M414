@@ -35,12 +35,12 @@ public class isValidTest {
 
 
         String[] s = {"1+5", "5-2", "1*5", "8/2"};
+        String[] s1 = {"1+5", "5-2", "1*5", "8/2"};
+        String[] s2 = {"1+5", "5-2", "1*5", "8/2"};
 
-        try {
             System.out.println(checkResult(s));
-        } catch (IOException | JSONException e) {
-            e.printStackTrace();
-        }
+            System.out.println(checkResult(s1));
+            System.out.println(checkResult(s2));
 
     }
 }
