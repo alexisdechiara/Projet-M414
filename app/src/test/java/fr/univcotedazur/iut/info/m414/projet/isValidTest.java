@@ -20,12 +20,12 @@ public class isValidTest {
         values.put("1**2", false);
         values.put("1***2", false);
         values.put("1//2", false);
-        values.put("1++2", true);
-        values.put("1--2", true);
         values.put("1+2", true);
+        values.put("1--2", false);
+        values.put("1++2", false);
         values.put("1-2", true);
         values.put("1+2+5", true);
-        values.put("1+(2+5)", true);
+        values.put("1+(2+5)", false);
 
         values.forEach((s, b) -> {
             assertEquals(isValid(s), b);
