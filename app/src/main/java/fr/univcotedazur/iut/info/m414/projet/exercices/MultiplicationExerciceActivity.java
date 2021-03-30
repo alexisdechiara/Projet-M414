@@ -127,4 +127,8 @@ public class MultiplicationExerciceActivity extends AppCompatActivity {
         }
         progress.setProgress(value,true);
     }
+    private void openDialog(String score){
+        Dialog dialog = new Dialog().newInstance(score);
+        dialog.show(getSupportFragmentManager(),null);
+    }
 }
