@@ -1,7 +1,5 @@
 package fr.univcotedazur.iut.info.m414.projet.exercices;
 
-import android.animation.ObjectAnimator;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.util.Log;
@@ -13,15 +11,12 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 import fr.univcotedazur.iut.info.m414.projet.R;
@@ -93,7 +88,7 @@ public class AdditionExerciceActivity extends AppCompatActivity {
                     }
                 });
 
-        confirm = (Button) findViewById(R.id.addition_confirm);
+        confirm = (Button) findViewById(R.id.create_exercice_button);
 
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override

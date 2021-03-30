@@ -19,8 +19,8 @@
         <activity android:name=".exercices.SoustractionExerciceActivity"/>
         <activity android:name=".exercices.MultiplicationExerciceActivity" />
         <activity android:name=".lessons.LessonsActivity" />
+        <activity android:name=".exercices.CustomExercicesActivity"/>
         <activity android:name=".exercices.CreateExerciceActivity"/>
-        <activity android:name=".exercices.CreateSpecificExerciceActivity"/>
         <activity android:name=".lessons.MultiplicationTableLessonActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

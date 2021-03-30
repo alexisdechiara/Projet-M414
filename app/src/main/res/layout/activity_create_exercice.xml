@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,36 +9,42 @@
     android:gravity="center"
     android:layout_margin="10dp">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+                android:id="@+id/titre_exercice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Entrez le nom de votre exercice"
+                android:gravity="center"
+                android:layout_gravity="center" />
+
+        <ListView
+            android:id="@+id/listeExercices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:dividerHeight="2dp"
+            android:divider="@color/purple_500"/>
+
+        <Button
+            android:id="@+id/button_confirm_exercice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confirmer"/>
+
+    </LinearLayout>
+
+    <android.inputmethodservice.KeyboardView
+        android:id="@+id/keyboardview"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="30dp"
-        android:layout_marginBottom="50dp"
-        android:text="Choisissez le type d'exercice"/>
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:visibility="gone" />
 
-    <Button
-        android:text="Addition"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:id="@+id/addition_button_exercice" />
-
-    <Button
-        android:text="Soustraction"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:id="@+id/subtraction_button_exercice" />
-
-    <Button
-        android:text="Multiplication"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:id="@+id/multiplication_button_exercice" />
-
-    <Button
-        android:text="Division"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:id="@+id/division_button_exercice" />
-
-</LinearLayout>
+</RelativeLayout>

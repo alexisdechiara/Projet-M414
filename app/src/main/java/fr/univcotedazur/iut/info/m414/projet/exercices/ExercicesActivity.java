@@ -12,8 +12,7 @@ public class ExercicesActivity extends AppCompatActivity {
 
     Button addition;
     Button multiplication;
-    Button soustraction;
-    Button createExercice;
+    Button customExercices;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,19 +21,15 @@ public class ExercicesActivity extends AppCompatActivity {
 
         addition = findViewById(R.id.addition_button);
         multiplication = findViewById(R.id.multiplication_button);
-        soustraction = findViewById(R.id.subtraction_button);
-        createExercice = findViewById(R.id.create_exercice_button);
+        customExercices = findViewById(R.id.custom_exercices_button);
 
 
         Intent additionActivity = new Intent(getApplicationContext(), AdditionExerciceActivity.class);
         Intent multiplicationActivity = new Intent(getApplicationContext(), MultiplicationExerciceActivity.class);
-        Intent createSoustractionActivity = new Intent(getApplicationContext(), SoustractionExerciceActivity.class);
-        Intent createExerciceActivity = new Intent(getApplicationContext(), CreateSpecificExerciceActivity.class);
+        Intent cutomExercicesActivity = new Intent(getApplicationContext(), CustomExercicesActivity.class);
 
         addition.setOnClickListener(v -> startActivity(additionActivity));
         multiplication.setOnClickListener(v -> startActivity(multiplicationActivity));
-        soustraction.setOnClickListener(v -> startActivity(createSoustractionActivity));
-        createExercice.setOnClickListener(v -> startActivity(createExerciceActivity));
-
+        customExercices.setOnClickListener(v -> startActivity(cutomExercicesActivity));
     }
 }

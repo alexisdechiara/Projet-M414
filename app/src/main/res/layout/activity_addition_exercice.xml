@@ -341,7 +341,7 @@
                 android:max="10" />
 
         <Button
-                android:id="@+id/addition_confirm"
+                android:id="@+id/create_exercice_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Confirmer"
