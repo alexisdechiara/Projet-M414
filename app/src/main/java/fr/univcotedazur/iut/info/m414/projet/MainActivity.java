@@ -7,6 +7,12 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.json.JSONException;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -27,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton settings;
 
 
-    public static String checkResult(String[] calcul) {
+    public static int[] checkResult(String[] calcul) {
         String query = "http://api.mathjs.org/v4/";
 
         try {
@@ -63,10 +69,23 @@ public class MainActivity extends AppCompatActivity {
                     response.append(inputLine);
                 }
                 in.close();
-
-                return response.toString();
+                String test = response.toString();
+                JSONParser parser = new JSONParser();
+                JSONObject jsonObject = (JSONObject) parser.parse(test);
+                JSONArray jsonArray = (JSONArray) jsonObject.get("result");
+                int[] finalResult = new int[10];
+                for (int i = 0; i < jsonArray.size(); i++) {
+                    String number = (String) jsonArray.get(i);
+                    if (!number.contains("."))
+                        finalResult[i] = Integer.parseInt(number);
+                    else {
+                        double cast = Double.parseDouble(number);
+                        finalResult[i] = (int) cast;
+                    }
+                }
+                return finalResult;
             }
-        } catch (IOException e) {
+        } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
         return null;

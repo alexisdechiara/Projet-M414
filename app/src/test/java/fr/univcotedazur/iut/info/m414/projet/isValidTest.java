@@ -34,13 +34,20 @@ public class isValidTest {
         values.forEach((s, b) -> assertEquals(isValid(s), b));
 
 
-        String[] s = {"1+5", "5-2", "1*5", "8/2"};
+        String[] s = {"1+5", "5-2", "1*5", "8/3","1+5", "5-2", "1*5", "8/2", "1+5", "5-2"};
         String[] s1 = {"1+5", "5-2", "1*5", "8/2"};
         String[] s2 = {"1+5", "5-2", "1*5", "8/2"};
-
-            System.out.println(checkResult(s));
-            System.out.println(checkResult(s1));
-            System.out.println(checkResult(s2));
-
+        /*try {
+            int[] tab1 = checkResult(s);
+            for (int i = 0 ; i < 10; i++){
+                System.out.println(tab1[i]);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }*/
+        int[] test = checkResult(s);
+        for (int i = 0; i < test.length; i++) {
+            System.out.println(test[i]);
+        }
     }
 }
