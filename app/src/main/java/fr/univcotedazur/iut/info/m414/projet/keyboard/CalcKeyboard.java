@@ -45,7 +45,6 @@ public class CalcKeyboard {
                     if (editable != null && start > 0) editable.delete(start - 1, start);
                 } else {
                     editable.insert(start, Character.toString((char) primaryCode));
-                    Log.d("ada","dazjidaz");
                 }
             }
 
