@@ -2,6 +2,7 @@ package fr.univcotedazur.iut.info.m414.projet;
 
 import android.app.Activity;
 import android.os.AsyncTask;
+import android.telephony.SmsManager;
 import android.util.Log;
 import android.widget.EditText;
 
@@ -127,6 +128,8 @@ public class CheckResults extends AsyncTask<Void, Void, Void> {
             }
         }
         Log.d("final Score", String.valueOf(finalScore));
+        //SmsManager sm = SmsManager.getDefault();
+        //sm.sendTextMessage(SettingsActivity.getPhoneNumber(), null, "Votre enfant a obtenu une note de " + finalScore + " sur 10.", null, null);
         openDialog(String.valueOf(finalScore));
     }
 
