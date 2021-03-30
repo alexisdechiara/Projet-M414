@@ -1,7 +1,5 @@
 package fr.univcotedazur.iut.info.m414.projet.exercices;
 
-import android.animation.ObjectAnimator;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.util.Log;
@@ -13,20 +11,17 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 import fr.univcotedazur.iut.info.m414.projet.R;
 
-public class AdditionExerciceActivity extends AppCompatActivity {
+public class SoustractionExerciceActivity extends AppCompatActivity {
 
     private Button confirm;
     private ArrayList<EditText> result = new ArrayList<>();
@@ -36,31 +31,32 @@ public class AdditionExerciceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_addition_exercice);
+        setContentView(R.layout.activity_soustraction_exercice);
         Random r = new Random();
-        result.add(findViewById(R.id.addition_result_1));
-        result.add(findViewById(R.id.addition_result_2));
-        result.add(findViewById(R.id.addition_result_3));
-        result.add(findViewById(R.id.addition_result_4));
-        result.add(findViewById(R.id.addition_result_5));
-        result.add(findViewById(R.id.addition_result_6));
-        result.add(findViewById(R.id.addition_result_7));
-        result.add(findViewById(R.id.addition_result_8));
-        result.add(findViewById(R.id.addition_result_9));
-        result.add(findViewById(R.id.addition_result_10));
-        answer.add(findViewById(R.id.addition_1));
-        answer.add(findViewById(R.id.addition_2));
-        answer.add(findViewById(R.id.addition_3));
-        answer.add(findViewById(R.id.addition_4));
-        answer.add(findViewById(R.id.addition_5));
-        answer.add(findViewById(R.id.addition_6));
-        answer.add(findViewById(R.id.addition_7));
-        answer.add(findViewById(R.id.addition_8));
-        answer.add(findViewById(R.id.addition_9));
-        answer.add(findViewById(R.id.addition_10));
+        result.add(findViewById(R.id.soustraction_result_1));
+        result.add(findViewById(R.id.soustraction_result_2));
+        result.add(findViewById(R.id.soustraction_result_3));
+        result.add(findViewById(R.id.soustraction_result_4));
+        result.add(findViewById(R.id.soustraction_result_5));
+        result.add(findViewById(R.id.soustraction_result_6));
+        result.add(findViewById(R.id.soustraction_result_7));
+        result.add(findViewById(R.id.soustraction_result_8));
+        result.add(findViewById(R.id.soustraction_result_9));
+        result.add(findViewById(R.id.soustraction_result_10));
+        answer.add(findViewById(R.id.soustraction_1));
+        answer.add(findViewById(R.id.soustraction_2));
+        answer.add(findViewById(R.id.soustraction_3));
+        answer.add(findViewById(R.id.soustraction_4));
+        answer.add(findViewById(R.id.soustraction_5));
+        answer.add(findViewById(R.id.soustraction_6));
+        answer.add(findViewById(R.id.soustraction_7));
+        answer.add(findViewById(R.id.soustraction_8));
+        answer.add(findViewById(R.id.soustraction_9));
+        answer.add(findViewById(R.id.soustraction_10));
 
         for (TextView t: answer) {
-            t.setText(String.valueOf(r.nextInt(100) + 1) + " + " + String.valueOf(r.nextInt(100) + 1));
+            String firstValue = String.valueOf(r.nextInt(100) + 1);
+            t.setText(firstValue + " - " + String.valueOf(r.nextInt(Integer.parseInt(firstValue)) + 1));
             t.setTextSize(32);
         }
 
@@ -93,7 +89,7 @@ public class AdditionExerciceActivity extends AppCompatActivity {
                     }
                 });
 
-        confirm = (Button) findViewById(R.id.addition_confirm);
+        confirm = (Button) findViewById(R.id.soustraction_confirm);
 
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,6 +120,7 @@ public class AdditionExerciceActivity extends AppCompatActivity {
             }
         });
     }
+
     private void checkProgressBar(){
         int value = 0;
         for (EditText e: result) {
@@ -131,4 +128,5 @@ public class AdditionExerciceActivity extends AppCompatActivity {
         }
         progress.setProgress(value,true);
     }
+
 }
