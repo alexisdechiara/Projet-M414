@@ -3,6 +3,7 @@ package fr.univcotedazur.iut.info.m414.projet.exercices;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -30,5 +31,14 @@ public class CustomExercicesActivity extends AppCompatActivity {
 
         create.setOnClickListener(v -> startActivity(createExercice));
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        ListView listExos = (ListView) findViewById(R.id.listeExercicesCrees);
+        ExercicesCreesAdapter adapter = new ExercicesCreesAdapter(this);
+        listExos.setAdapter(adapter);
+        Log.d("test", "test");
     }
 }
