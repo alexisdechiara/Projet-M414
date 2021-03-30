@@ -8,7 +8,6 @@ import android.widget.ImageButton;
 import androidx.appcompat.app.AppCompatActivity;
 
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -30,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     ImageButton settings;
 
 
-
     public static String checkResult(String[] calcul) throws IOException, JSONException {
         String query = "http://api.mathjs.org/v4/";
         URL obj = new URL(query);
@@ -43,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < calcul.length; i++) {
             calcul[i] = calcul[i].replaceAll("\\s+", "");
             POST_PARAMS.append("\"").append(calcul[i]).append("\"");
-            if(i != calcul.length-1) {
+            if (i != calcul.length - 1) {
                 POST_PARAMS.append(", ");
             }
         }
@@ -63,9 +61,10 @@ public class MainActivity extends AppCompatActivity {
             String inputLine;
             StringBuilder response = new StringBuilder();
 
-            while ((inputLine = in .readLine()) != null) {
+            while ((inputLine = in.readLine()) != null) {
                 response.append(inputLine);
-            } in .close();
+            }
+            in.close();
 
             return response.toString();
         }
