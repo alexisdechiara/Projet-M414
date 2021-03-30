@@ -10,7 +10,7 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.ProjetM414">
-        <activity android:name=".SettingsActivity"></activity>
+        <activity android:name=".SettingsActivity" />
         <activity android:name=".lessons.AdditionLessonActivity" />
         <activity android:name=".lessons.SubstractionLessonActivity" />
         <activity android:name=".lessons.MultiplicationLessonActivity" />

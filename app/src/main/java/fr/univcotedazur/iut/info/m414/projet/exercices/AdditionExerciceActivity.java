@@ -1,5 +1,8 @@
 package fr.univcotedazur.iut.info.m414.projet.exercices;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.util.Log;
@@ -10,6 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDialogFragment;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -19,6 +23,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Random;
 
+import fr.univcotedazur.iut.info.m414.projet.MainActivity;
 import fr.univcotedazur.iut.info.m414.projet.R;
 
 public class AdditionExerciceActivity extends AppCompatActivity {
@@ -93,6 +98,7 @@ public class AdditionExerciceActivity extends AppCompatActivity {
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                /*
                 int finalScore = 0;
                 Log.d("click", "t'as cliqué");
                 try {
@@ -115,7 +121,8 @@ public class AdditionExerciceActivity extends AppCompatActivity {
                     Log.d("je teste", response.toString());
                 } catch (Exception e) {
                     Log.d("ui", e.getMessage());
-                }
+                }*/
+                openDialog("0");
             }
         });
     }
@@ -125,5 +132,9 @@ public class AdditionExerciceActivity extends AppCompatActivity {
             if(! (e.getText().toString().trim().length() == 0) || ! e.getText().toString().equals("")) value ++;
         }
         progress.setProgress(value,true);
+    }
+    private void openDialog(String score){
+        Dialog dialog = new Dialog().newInstance(score);
+        dialog.show(getSupportFragmentManager(),null);
     }
 }
