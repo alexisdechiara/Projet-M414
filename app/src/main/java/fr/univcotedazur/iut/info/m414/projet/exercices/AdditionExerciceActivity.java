@@ -1,8 +1,5 @@
 package fr.univcotedazur.iut.info.m414.projet.exercices;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.util.Log;
@@ -13,27 +10,22 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDialogFragment;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import fr.univcotedazur.iut.info.m414.projet.CheckResults;
-import fr.univcotedazur.iut.info.m414.projet.MainActivity;
 import fr.univcotedazur.iut.info.m414.projet.R;
+
+import static java.lang.Thread.sleep;
 
 public class AdditionExerciceActivity extends AppCompatActivity {
 
     private Button confirm;
-    private ArrayList<EditText> result = new ArrayList<>();
-    private ArrayList<TextView> answer = new ArrayList<>();
+    private final ArrayList<EditText> result = new ArrayList<>();
+    private final ArrayList<TextView> answer = new ArrayList<>();
     private ProgressBar progress;
 
     @Override
@@ -62,8 +54,8 @@ public class AdditionExerciceActivity extends AppCompatActivity {
         answer.add(findViewById(R.id.addition_9));
         answer.add(findViewById(R.id.addition_10));
 
-        for (TextView t: answer) {
-            t.setText(String.valueOf(r.nextInt(100) + 1) + " + " + String.valueOf(r.nextInt(100) + 1));
+        for (TextView t : answer) {
+            t.setText((r.nextInt(100) + 1) + " + " + (r.nextInt(100) + 1));
             t.setTextSize(32);
         }
 
@@ -96,7 +88,7 @@ public class AdditionExerciceActivity extends AppCompatActivity {
                     }
                 });
 
-        confirm = (Button) findViewById(R.id.create_exercice_button);
+        confirm = findViewById(R.id.create_exercice_button);
 
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,10 +100,10 @@ public class AdditionExerciceActivity extends AppCompatActivity {
                 Log.d("calculs a la base", Arrays.toString(tab));
                 CheckResults cr = new CheckResults(tab);
                 cr.execute();
-                try {
-                    cr.get(1000, TimeUnit.MILLISECONDS);
-                } catch (Exception e) {
-                    e.printStackTrace();
+
+                while (!cr.isFinished()) {
+                    try { sleep(100); }
+                    catch (InterruptedException e) { e.printStackTrace(); }
                 }
                 int[] results = cr.getResult();
                 int finalScore = 0;
@@ -129,15 +121,18 @@ public class AdditionExerciceActivity extends AppCompatActivity {
             }
         });
     }
-    private void checkProgressBar(){
+
+    private void checkProgressBar() {
         int value = 0;
-        for (EditText e: result) {
-            if(! (e.getText().toString().trim().length() == 0) || ! e.getText().toString().equals("")) value ++;
+        for (EditText e : result) {
+            if (!(e.getText().toString().trim().length() == 0) || !e.getText().toString().equals(""))
+                value++;
         }
-        progress.setProgress(value,true);
+        progress.setProgress(value, true);
     }
-    private void openDialog(String score){
+
+    private void openDialog(String score) {
         Dialog dialog = new Dialog().newInstance(score);
-        dialog.show(getSupportFragmentManager(),null);
+        dialog.show(getSupportFragmentManager(), null);
     }
 }

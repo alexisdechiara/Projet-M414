@@ -18,20 +18,31 @@ import java.util.Arrays;
 
 public class CheckResults extends AsyncTask<Void, Void, Void> {
 
-    private String[] calcul;
+    private final String[] calcul;
 
-    private int[] result = new int[10];
+    private final int[] result = new int[10];
+    private boolean isFinished;
 
     public CheckResults(String[] calcul) {
         this.calcul = calcul;
         Log.d("calcul", Arrays.toString(calcul));
     }
 
-    public  int[] getResult() {
+    public int[] getResult() {
         for (int i = 0; i < 10; i++) {
             Log.d("results encore", result[i] + "");
         }
         return result;
+    }
+
+    public boolean isFinished() {
+        return isFinished;
+    }
+
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+        isFinished = false;
     }
 
     @Override
@@ -102,6 +113,6 @@ public class CheckResults extends AsyncTask<Void, Void, Void> {
     @Override
     protected void onPostExecute(Void result) {
         super.onPostExecute(result);
-
+        isFinished = true;
     }
 }
