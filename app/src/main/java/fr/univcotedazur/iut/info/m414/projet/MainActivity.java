@@ -3,6 +3,7 @@ package fr.univcotedazur.iut.info.m414.projet;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button lessons;
     Button exercices;
+    ImageButton settings;
 
 //    public static boolean isValid(String format) {
 //        String query = "https://api.mathjs.org/v4/?expr=" + format.replaceAll("\\s+", "").replace("+", "%2B");
@@ -60,11 +62,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         lessons = findViewById(R.id.lessons_button);
         exercices = findViewById(R.id.exercices_button);
+        settings = findViewById(R.id.settings);
+
         Intent lessonsActivity = new Intent(MainActivity.this, LessonsActivity.class);
         Intent exercicesActivity = new Intent(MainActivity.this, ExercicesActivity.class);
+        Intent settingsActivity = new Intent(MainActivity.this, SettingsActivity.class);
 
         lessons.setOnClickListener(v -> startActivity(lessonsActivity));
         exercices.setOnClickListener(v -> startActivity(exercicesActivity));
+        settings.setOnClickListener(v -> startActivity(settingsActivity));
 
     }
 }

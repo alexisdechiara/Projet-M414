@@ -36,8 +36,8 @@
     <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/ic_menu_manage"
-            android:id="@+id/imageButton"
+            app:srcCompat="@drawable/baseline_settings_black_48"
+            android:id="@+id/settings"
             android:layout_margin="25dp"
             android:layout_gravity="right" />
 
