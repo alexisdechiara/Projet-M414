@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
+import fr.univcotedazur.iut.info.m414.projet.MainActivity;
 import fr.univcotedazur.iut.info.m414.projet.R;
 import fr.univcotedazur.iut.info.m414.projet.keyboard.CalcKeyboard;
 
@@ -45,8 +46,20 @@ public class CreateSpecificExerciceActivity extends AppCompatActivity {
                         questions.add(listExos.getItemAtPosition(i).toString());
                 }
                 if (checked) {
-                    ListeExercices.add(new Exercice(titre, true, questions));
-                    active.finish();
+                    boolean valid = true;
+                    boucleValide:
+                    for (int i = 0; i < 10; i++) {
+                        if (!MainActivity.isValid(questions.get(i))) {
+                            valid = false;
+                            Toast toast = Toast.makeText(getApplicationContext(), "Le champ " + (i+1) + " n'est pas valide.", Toast.LENGTH_SHORT);
+                            toast.show();
+                            break boucleValide;
+                        }
+                    }
+                    if (valid) {
+                        ListeExercices.add(new Exercice(titre, true, questions));
+                        active.finish();
+                    }
                 }
                 else {
                     Toast toast = Toast.makeText(getApplicationContext(), "Veuillez remplir tous les champs", Toast.LENGTH_SHORT);
