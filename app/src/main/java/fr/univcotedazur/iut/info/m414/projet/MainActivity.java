@@ -7,6 +7,15 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -20,31 +29,48 @@ public class MainActivity extends AppCompatActivity {
     Button exercices;
     ImageButton settings;
 
-//    public static boolean isValid(String format) {
-//        String query = "https://api.mathjs.org/v4/?expr=" + format.replaceAll("\\s+", "").replace("+", "%2B");
-//        if (format.contains("+") || format.contains("-") || format.contains("/") || format.contains("*") || format.contains("%")) {
-//            try {
-//                URL urlForGetRequest = new URL(query);
-//                String readLine;
-//                HttpURLConnection connection = (HttpURLConnection) urlForGetRequest.openConnection();
-//                connection.setRequestMethod("GET");
-//                int responseCode = connection.getResponseCode();
-//                if (responseCode == HttpURLConnection.HTTP_OK) {
-//                    BufferedReader in = new BufferedReader(
-//                            new InputStreamReader(connection.getInputStream()));
-//                    StringBuilder response = new StringBuilder();
-//                    while ((readLine = in.readLine()) != null) {
-//                        response.append(readLine);
-//                    }
-//                    in.close();
-//                    return true;
-//                }
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//        return false;
-//    }
+
+
+    public static String checkResult(String[] calcul) throws IOException, JSONException {
+        String query = "http://api.mathjs.org/v4/";
+        URL obj = new URL(query);
+
+        HttpURLConnection postConnection = (HttpURLConnection) obj.openConnection();
+        postConnection.setRequestMethod("POST");
+        postConnection.setRequestProperty("Content-Type", "application/json");
+
+        StringBuilder POST_PARAMS = new StringBuilder("{" + "\"expr\": [");
+        for (int i = 0; i < calcul.length; i++) {
+            calcul[i] = calcul[i].replaceAll("\\s+", "");
+            POST_PARAMS.append("\"").append(calcul[i]).append("\"");
+            if(i != calcul.length-1) {
+                POST_PARAMS.append(", ");
+            }
+        }
+        POST_PARAMS.append("]}");
+
+        postConnection.setDoOutput(true);
+        OutputStream os = postConnection.getOutputStream();
+        os.write(POST_PARAMS.toString().getBytes());
+        os.flush();
+        os.close();
+
+
+        int responseCode = postConnection.getResponseCode();
+
+        if (responseCode == HttpURLConnection.HTTP_OK) {
+            BufferedReader in = new BufferedReader(new InputStreamReader(postConnection.getInputStream()));
+            String inputLine;
+            StringBuilder response = new StringBuilder();
+
+            while ((inputLine = in .readLine()) != null) {
+                response.append(inputLine);
+            } in .close();
+
+            return response.toString();
+        }
+        return null;
+    }
 
 
     public static boolean isValid(String calcul) {
