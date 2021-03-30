@@ -6,4 +6,11 @@ public class Exercice {
     private String titre;
     private boolean sendSMS;
     private ArrayList<String> questions;
+
+    public Exercice(String t, boolean SMS, ArrayList<String> q) {
+        titre = t;
+        sendSMS = SMS;
+        questions = q;
+    }
+
 }

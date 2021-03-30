@@ -7,17 +7,23 @@ import android.inputmethodservice.KeyboardView;
 import android.inputmethodservice.KeyboardView.OnKeyboardActionListener;
 import android.text.Editable;
 import android.text.InputType;
+import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
-class CalcKeyboard {
+import androidx.appcompat.widget.AppCompatEditText;
+
+public class CalcKeyboard {
     private final KeyboardView mKeyboardView;
     private final Activity mHostActivity;
+    private ViewGroup viewGroup;
 
-    public CalcKeyboard(Activity host, int view_id, int layout_id) {
+    public CalcKeyboard(Activity host, ViewGroup vg, int view_id, int layout_id) {
         mHostActivity = host;
+        viewGroup = vg;
         mKeyboardView = mHostActivity.findViewById(view_id);
         mKeyboardView.setKeyboard(new Keyboard(mHostActivity, layout_id));
         mKeyboardView.setPreviewEnabled(false);
@@ -27,7 +33,11 @@ class CalcKeyboard {
             @Override
             public void onKey(int primaryCode, int[] keyCodes) {
                 View focusCurrent = mHostActivity.getWindow().getCurrentFocus();
-                if (focusCurrent == null || focusCurrent.getClass() != EditText.class) return;
+                if (focusCurrent == null || focusCurrent.getClass() != AppCompatEditText.class) {
+                    Log.d("!", focusCurrent.getClass().toString());
+                    Log.d("!", Boolean.toString(focusCurrent == null));
+                    return;
+                }
                 EditText edittext = (EditText) focusCurrent;
                 Editable editable = edittext.getText();
                 int start = edittext.getSelectionStart();
@@ -35,6 +45,7 @@ class CalcKeyboard {
                     if (editable != null && start > 0) editable.delete(start - 1, start);
                 } else {
                     editable.insert(start, Character.toString((char) primaryCode));
+                    Log.d("ada","dazjidaz");
                 }
             }
 
@@ -70,6 +81,10 @@ class CalcKeyboard {
         mHostActivity.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
     }
 
+    public void setViewGroup(ViewGroup v){
+        viewGroup = v;
+    }
+
     public boolean isCustomKeyboardVisible() {
         return mKeyboardView.getVisibility() == View.VISIBLE;
     }
@@ -88,7 +103,7 @@ class CalcKeyboard {
 
     @SuppressLint("ClickableViewAccessibility")
     public void registerEditText(int res_id) {
-        EditText edittext = mHostActivity.findViewById(res_id);
+        EditText edittext = viewGroup.findViewById(res_id);
         edittext.setOnFocusChangeListener((v, hasFocus) -> {
             if (hasFocus) showCustomKeyboard(v);
             else hideCustomKeyboard();

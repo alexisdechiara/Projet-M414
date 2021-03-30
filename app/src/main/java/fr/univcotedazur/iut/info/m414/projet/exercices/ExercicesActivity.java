@@ -23,7 +23,7 @@ public class ExercicesActivity extends AppCompatActivity {
 
 
         Intent createAdditionActivity = new Intent(getApplicationContext(), AdditionExerciceActivity.class);
-        Intent createExerciceActivity = new Intent(getApplicationContext(), CreateExerciceActivity.class);
+        Intent createExerciceActivity = new Intent(getApplicationContext(), CreateSpecificExerciceActivity.class);
 
         createExercice.setOnClickListener(v -> startActivity(createExerciceActivity));
         addition.setOnClickListener(v -> startActivity(createAdditionActivity));

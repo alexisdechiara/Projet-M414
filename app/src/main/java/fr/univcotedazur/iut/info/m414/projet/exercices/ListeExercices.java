@@ -15,15 +15,19 @@ public class ListeExercices {
     }
 
     public static int size() {
-        return listeExercices.size();
+        return instance.getListeExercices().size();
     }
 
     public static Exercice get(int pos) {
-        return listeExercices.get(pos);
+        return instance.getListeExercices().get(pos);
     }
 
     public static void add(Exercice e) {
-        listeExercices.add(e);
+        instance.getListeExercices().add(e);
+    }
+
+    private ArrayList<Exercice> getListeExercices() {
+        return listeExercices;
     }
 
 }
