@@ -7,39 +7,35 @@
         tools:context=".exercices.CreateExerciceActivity"
         android:gravity="center">
 
-    <ScrollView
+    <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="bottom|center"
+            android:padding="10dp">
 
-        <LinearLayout
+        <EditText
+                android:id="@+id/titre_exercice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Entrez le nom de votre exercice" />
+
+        <ListView
+                android:id="@+id/listeExercices"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_gravity="center"
+                android:footerDividersEnabled="false"
+                android:headerDividersEnabled="false" />
 
-            <EditText
-                    android:id="@+id/titre_exercice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="Entrez le nom de votre exercice"
-                    android:gravity="center"
-                    android:layout_gravity="center" />
+        <Button
+                android:id="@+id/button_confirm_exercice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Confirmer"
+                android:layout_gravity="center" />
 
-            <ListView
-                    android:id="@+id/listeExercices"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:dividerHeight="2dp"
-                    android:divider="@color/purple_500" />
-
-            <Button
-                    android:id="@+id/button_confirm_exercice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Confirmer"
-                    android:layout_gravity="center" />
-
-        </LinearLayout>
-    </ScrollView>
+    </LinearLayout>
 
     <android.inputmethodservice.KeyboardView
             android:id="@+id/keyboardview"
