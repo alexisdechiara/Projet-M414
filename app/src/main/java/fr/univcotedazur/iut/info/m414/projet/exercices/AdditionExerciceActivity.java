@@ -30,7 +30,7 @@ public class AdditionExerciceActivity extends AppCompatActivity {
 
     private Button confirm;
     private ArrayList<EditText> result = new ArrayList<>();
-    private ArrayList<TextView> a = new ArrayList<>();
+    private ArrayList<TextView> answer = new ArrayList<>();
     private ProgressBar progress;
 
     @Override
@@ -48,6 +48,23 @@ public class AdditionExerciceActivity extends AppCompatActivity {
         result.add(findViewById(R.id.addition_result_8));
         result.add(findViewById(R.id.addition_result_9));
         result.add(findViewById(R.id.addition_result_10));
+        answer.add(findViewById(R.id.addition_1));
+        answer.add(findViewById(R.id.addition_2));
+        answer.add(findViewById(R.id.addition_3));
+        answer.add(findViewById(R.id.addition_4));
+        answer.add(findViewById(R.id.addition_4));
+        answer.add(findViewById(R.id.addition_5));
+        answer.add(findViewById(R.id.addition_6));
+        answer.add(findViewById(R.id.addition_7));
+        answer.add(findViewById(R.id.addition_8));
+        answer.add(findViewById(R.id.addition_9));
+        answer.add(findViewById(R.id.addition_10));
+
+        for (TextView t: answer) {
+            t.setText(String.valueOf(r.nextInt(100) + 1) + " + " + String.valueOf(r.nextInt(100) + 1));
+            t.setTextSize(32);
+        }
+
         progress = findViewById(R.id.progressBar);
 
         new MultiTextWatcher()
@@ -77,46 +94,6 @@ public class AdditionExerciceActivity extends AppCompatActivity {
                     }
                 });
 
-        a.add((TextView) findViewById(R.id.addition_1));
-        a.get(0).setText(String.valueOf(r.nextInt(100) + 1) + " + " + String.valueOf(r.nextInt(100) + 1));
-        a.get(0).setTextSize(32);
-
-        a.add((TextView) findViewById(R.id.addition_2));
-        a.get(1).setText(String.valueOf(r.nextInt(100) + 1) + " + " + String.valueOf(r.nextInt(100) + 1));
-        a.get(1).setTextSize(32);
-
-        a.add((TextView) findViewById(R.id.addition_3));
-        a.get(2).setText(String.valueOf(r.nextInt(100) + 1) + " + " + String.valueOf(r.nextInt(100) + 1));
-        a.get(2).setTextSize(32);
-
-        a.add((TextView) findViewById(R.id.addition_4));
-        a.get(3).setText(String.valueOf(r.nextInt(100) + 1) + " + " + String.valueOf(r.nextInt(100) + 1));
-        a.get(3).setTextSize(32);
-
-        a.add((TextView) findViewById(R.id.addition_5));
-        a.get(4).setText(String.valueOf(r.nextInt(100) + 1) + " + " + String.valueOf(r.nextInt(100) + 1));
-        a.get(4).setTextSize(32);
-
-        a.add((TextView) findViewById(R.id.addition_6));
-        a.get(5).setText(String.valueOf(r.nextInt(100) + 1) + " + " + String.valueOf(r.nextInt(100) + 1));
-        a.get(5).setTextSize(32);
-
-        a.add((TextView) findViewById(R.id.addition_7));
-        a.get(6).setText(String.valueOf(r.nextInt(100) + 1) + " + " + String.valueOf(r.nextInt(100) + 1));
-        a.get(6).setTextSize(32);
-
-        a.add((TextView) findViewById(R.id.addition_8));
-        a.get(7).setText(String.valueOf(r.nextInt(100) + 1) + " + " + String.valueOf(r.nextInt(100) + 1));
-        a.get(7).setTextSize(32);
-
-        a.add((TextView) findViewById(R.id.addition_9));
-        a.get(8).setText(String.valueOf(r.nextInt(100) + 1) + " + " + String.valueOf(r.nextInt(100) + 1));
-        a.get(8).setTextSize(32);
-
-        a.add((TextView) findViewById(R.id.addition_10));
-        a.get(9).setText(String.valueOf(r.nextInt(100) + 1) + " + " + String.valueOf(r.nextInt(100) + 1));
-        a.get(9).setTextSize(32);
-
         confirm = (Button) findViewById(R.id.addition_confirm);
 
         confirm.setOnClickListener(new View.OnClickListener() {
@@ -131,7 +108,7 @@ public class AdditionExerciceActivity extends AppCompatActivity {
                     con.setRequestProperty("content-type", "application/json");
                     con.setRequestProperty("accept", "application/json");
                     con.setDoOutput(true);
-                    String jsonInputString = "{\"expr\": \"" + a.get(0).getText().toString() + "\"}\"";
+                    String jsonInputString = "{\"expr\": \"" + answer.get(0).getText().toString() + "\"}\"";
                     OutputStream os = con.getOutputStream();
                     byte[] input = jsonInputString.getBytes();
                     os.write(input, 0, input.length);
