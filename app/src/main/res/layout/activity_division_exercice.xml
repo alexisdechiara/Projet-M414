@@ -28,7 +28,7 @@
                 android:layout_gravity="right">
 
                 <TextView
-                    android:id="@+id/division_2"
+                    android:id="@+id/division_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="number" />
@@ -41,7 +41,7 @@
                     android:textSize="32sp" />
 
                 <EditText
-                    android:id="@+id/division_result_2"
+                    android:id="@+id/division_result_1"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:inputType="number"
@@ -58,7 +58,7 @@
                 android:layout_gravity="right">
 
                 <TextView
-                    android:id="@+id/division_8"
+                    android:id="@+id/division_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="number" />
@@ -71,7 +71,37 @@
                     android:layout_margin="5dp" />
 
                 <EditText
-                    android:id="@+id/division_result_8"
+                    android:id="@+id/division_result_2"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:textSize="32sp"
+                    android:layout_margin="5dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="right"
+                android:layout_gravity="right">
+
+                <TextView
+                    android:id="@+id/division_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" = "
+                    android:textSize="32sp"
+                    android:layout_margin="5dp" />
+
+                <EditText
+                    android:id="@+id/division_result_3"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:inputType="number"
@@ -97,16 +127,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" = "
-                    android:textSize="32sp"
-                    android:layout_margin="5dp" />
+                    android:layout_margin="5dp"
+                    android:textSize="32sp" />
 
                 <EditText
                     android:id="@+id/division_result_4"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:inputType="number"
-                    android:textSize="32sp"
-                    android:layout_margin="5dp" />
+                    android:layout_margin="5dp"
+                    android:textSize="32sp" />
 
             </LinearLayout>
 
@@ -118,7 +148,7 @@
                 android:layout_gravity="right">
 
                 <TextView
-                    android:id="@+id/division_1"
+                    android:id="@+id/division_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="number" />
@@ -127,16 +157,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" = "
-                    android:layout_margin="5dp"
-                    android:textSize="32sp" />
+                    android:textSize="32sp"
+                    android:layout_margin="5dp" />
 
                 <EditText
-                    android:id="@+id/division_result_1"
+                    android:id="@+id/division_result_5"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:inputType="number"
-                    android:layout_margin="5dp"
-                    android:textSize="32sp" />
+                    android:textSize="32sp"
+                    android:layout_margin="5dp" />
 
             </LinearLayout>
 
@@ -208,7 +238,7 @@
                 android:layout_gravity="right">
 
                 <TextView
-                    android:id="@+id/division_10"
+                    android:id="@+id/division_8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="number" />
@@ -221,7 +251,7 @@
                     android:layout_margin="5dp" />
 
                 <EditText
-                    android:id="@+id/division_result_10"
+                    android:id="@+id/division_result_8"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:inputType="number"
@@ -241,7 +271,8 @@
                     android:id="@+id/division_9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:textSize="25sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -268,38 +299,7 @@
                 android:layout_gravity="right">
 
                 <TextView
-                    android:id="@+id/division_3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:textSize="25sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=" = "
-                    android:textSize="32sp"
-                    android:layout_margin="5dp" />
-
-                <EditText
-                    android:id="@+id/division_result_3"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:textSize="32sp"
-                    android:layout_margin="5dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="right"
-                android:layout_gravity="right">
-
-                <TextView
-                    android:id="@+id/division_5"
+                    android:id="@+id/division_10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="number" />
@@ -312,7 +312,7 @@
                     android:layout_margin="5dp" />
 
                 <EditText
-                    android:id="@+id/division_result_5"
+                    android:id="@+id/division_result_10"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:inputType="number"

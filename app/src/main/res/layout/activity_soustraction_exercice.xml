@@ -9,113 +9,23 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="1"
         android:layout_gravity="fill_vertical">
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:gravity="center"
-            android:layout_gravity="center_horizontal">
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_gravity="right"
                 android:gravity="right"
-                android:layout_gravity="right">
-
-                <TextView
-                    android:id="@+id/soustraction_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=" = "
-                    android:layout_margin="5dp"
-                    android:textSize="32sp" />
-
-                <EditText
-                    android:id="@+id/soustraction_result_2"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:layout_margin="5dp"
-                    android:textSize="32sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="right"
-                android:layout_gravity="right">
-
-                <TextView
-                    android:id="@+id/soustraction_8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=" = "
-                    android:textSize="32sp"
-                    android:layout_margin="5dp" />
-
-                <EditText
-                    android:id="@+id/soustraction_result_8"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:textSize="32sp"
-                    android:layout_margin="5dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="right"
-                android:layout_gravity="right">
-
-                <TextView
-                    android:id="@+id/soustraction_4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=" = "
-                    android:textSize="32sp"
-                    android:layout_margin="5dp" />
-
-                <EditText
-                    android:id="@+id/soustraction_result_4"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:textSize="32sp"
-                    android:layout_margin="5dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="right"
-                android:layout_gravity="right">
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/soustraction_1"
@@ -126,16 +36,16 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" = "
                     android:layout_margin="5dp"
+                    android:text=" = "
                     android:textSize="32sp" />
 
                 <EditText
                     android:id="@+id/soustraction_result_1"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:inputType="number"
                     android:layout_margin="5dp"
+                    android:inputType="number"
                     android:textSize="32sp" />
 
             </LinearLayout>
@@ -143,12 +53,12 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_gravity="right"
                 android:gravity="right"
-                android:layout_gravity="right">
+                android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/soustraction_6"
+                    android:id="@+id/soustraction_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="number" />
@@ -156,116 +66,26 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
                     android:text=" = "
-                    android:textSize="32sp"
-                    android:layout_margin="5dp" />
+                    android:textSize="32sp" />
 
                 <EditText
-                    android:id="@+id/soustraction_result_6"
+                    android:id="@+id/soustraction_result_2"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
                     android:inputType="number"
-                    android:textSize="32sp"
-                    android:layout_margin="5dp" />
+                    android:textSize="32sp" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_gravity="right"
                 android:gravity="right"
-                android:layout_gravity="right">
-
-                <TextView
-                    android:id="@+id/soustraction_7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=" = "
-                    android:textSize="32sp"
-                    android:layout_margin="5dp" />
-
-                <EditText
-                    android:id="@+id/soustraction_result_7"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:textSize="32sp"
-                    android:layout_margin="5dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="right"
-                android:layout_gravity="right">
-
-                <TextView
-                    android:id="@+id/soustraction_10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=" = "
-                    android:textSize="32sp"
-                    android:layout_margin="5dp" />
-
-                <EditText
-                    android:id="@+id/soustraction_result_10"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:textSize="32sp"
-                    android:layout_margin="5dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="right"
-                android:layout_gravity="right">
-
-                <TextView
-                    android:id="@+id/soustraction_9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=" = "
-                    android:textSize="32sp"
-                    android:layout_margin="5dp" />
-
-                <EditText
-                    android:id="@+id/soustraction_result_9"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:textSize="32sp"
-                    android:layout_margin="5dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="right"
-                android:layout_gravity="right">
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/soustraction_3"
@@ -277,26 +97,56 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
                     android:text=" = "
-                    android:textSize="32sp"
-                    android:layout_margin="5dp" />
+                    android:textSize="32sp" />
 
                 <EditText
                     android:id="@+id/soustraction_result_3"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
                     android:inputType="number"
-                    android:textSize="32sp"
-                    android:layout_margin="5dp" />
+                    android:textSize="32sp" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_gravity="right"
                 android:gravity="right"
-                android:layout_gravity="right">
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/soustraction_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text=" = "
+                    android:textSize="32sp" />
+
+                <EditText
+                    android:id="@+id/soustraction_result_4"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:inputType="number"
+                    android:textSize="32sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/soustraction_5"
@@ -307,17 +157,167 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
                     android:text=" = "
-                    android:textSize="32sp"
-                    android:layout_margin="5dp" />
+                    android:textSize="32sp" />
 
                 <EditText
                     android:id="@+id/soustraction_result_5"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
                     android:inputType="number"
-                    android:textSize="32sp"
-                    android:layout_margin="5dp" />
+                    android:textSize="32sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/soustraction_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text=" = "
+                    android:textSize="32sp" />
+
+                <EditText
+                    android:id="@+id/soustraction_result_6"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:inputType="number"
+                    android:textSize="32sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/soustraction_7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text=" = "
+                    android:textSize="32sp" />
+
+                <EditText
+                    android:id="@+id/soustraction_result_7"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:inputType="number"
+                    android:textSize="32sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/soustraction_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text=" = "
+                    android:textSize="32sp" />
+
+                <EditText
+                    android:id="@+id/soustraction_result_8"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:inputType="number"
+                    android:textSize="32sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/soustraction_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text=" = "
+                    android:textSize="32sp" />
+
+                <EditText
+                    android:id="@+id/soustraction_result_9"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:inputType="number"
+                    android:textSize="32sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/soustraction_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text=" = "
+                    android:textSize="32sp" />
+
+                <EditText
+                    android:id="@+id/soustraction_result_10"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:inputType="number"
+                    android:textSize="32sp" />
 
             </LinearLayout>
 
