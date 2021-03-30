@@ -98,31 +98,20 @@ public class AdditionExerciceActivity extends AppCompatActivity {
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*
+                String[] tab = new String[10];
+                for (int i = 0; i < 10; i++) {
+                    tab[i] = answer.get(i).getText().toString();
+                }
+                int[] results = MainActivity.checkResult(tab);
                 int finalScore = 0;
-                Log.d("click", "t'as cliqué");
-                try {
-                    URL url = new URL("http://api.mathjs.org/v4/");
-                    HttpURLConnection con = (HttpURLConnection) url.openConnection();
-                    con.setRequestMethod("POST");
-                    con.setRequestProperty("content-type", "application/json");
-                    con.setRequestProperty("accept", "application/json");
-                    con.setDoOutput(true);
-                    String jsonInputString = "{\"expr\": \"" + answer.get(0).getText().toString() + "\"}\"";
-                    OutputStream os = con.getOutputStream();
-                    byte[] input = jsonInputString.getBytes();
-                    os.write(input, 0, input.length);
-                    BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
-                    StringBuilder response = new StringBuilder();
-                    String responseLine = null;
-                    while ((responseLine = br.readLine()) != null) {
-                        response.append(responseLine.trim());
+                for (int i = 0; i < 10; i++) {
+                    if (result.get(i).getText().toString().trim().length() != 0) {
+                        if (Integer.parseInt(result.get(i).getText().toString()) == results[i]) {
+                            finalScore++;
+                        }
                     }
-                    Log.d("je teste", response.toString());
-                } catch (Exception e) {
-                    Log.d("ui", e.getMessage());
-                }*/
-                openDialog("0");
+                }
+                openDialog(String.valueOf(finalScore));
             }
         });
     }
