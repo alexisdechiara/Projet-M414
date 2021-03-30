@@ -2,8 +2,6 @@ package fr.univcotedazur.iut.info.m414.projet.exercices;
 
 import android.os.Bundle;
 import android.text.Editable;
-import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -13,16 +11,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Random;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 
-import fr.univcotedazur.iut.info.m414.projet.CheckResults;
 import fr.univcotedazur.iut.info.m414.projet.R;
 
-public class AdditionExerciceActivity extends AppCompatActivity {
+
+public class CustomSpecificExerciceActivity extends AppCompatActivity {
 
     private final ArrayList<EditText> result = new ArrayList<>();
     private final ArrayList<TextView> answer = new ArrayList<>();
@@ -33,33 +26,34 @@ public class AdditionExerciceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_addition_exercice);
-        Random r = new Random();
+        setContentView(R.layout.specific_exercice_layout);
         activ = this;
-        result.add(findViewById(R.id.addition_result_1));
-        result.add(findViewById(R.id.addition_result_2));
-        result.add(findViewById(R.id.addition_result_3));
-        result.add(findViewById(R.id.addition_result_4));
-        result.add(findViewById(R.id.addition_result_5));
-        result.add(findViewById(R.id.addition_result_6));
-        result.add(findViewById(R.id.addition_result_7));
-        result.add(findViewById(R.id.addition_result_8));
-        result.add(findViewById(R.id.addition_result_9));
-        result.add(findViewById(R.id.addition_result_10));
-        answer.add(findViewById(R.id.addition_1));
-        answer.add(findViewById(R.id.addition_2));
-        answer.add(findViewById(R.id.addition_3));
-        answer.add(findViewById(R.id.addition_4));
-        answer.add(findViewById(R.id.addition_5));
-        answer.add(findViewById(R.id.addition_6));
-        answer.add(findViewById(R.id.addition_7));
-        answer.add(findViewById(R.id.addition_8));
-        answer.add(findViewById(R.id.addition_9));
-        answer.add(findViewById(R.id.addition_10));
+        int position = getIntent().getExtras().getInt("position");
 
-        for (TextView t : answer) {
-            t.setText((r.nextInt(100) + 1) + " + " + (r.nextInt(100) + 1));
-            t.setTextSize(32);
+        result.add(findViewById(R.id.custom_result_1));
+        result.add(findViewById(R.id.custom_result_2));
+        result.add(findViewById(R.id.custom_result_3));
+        result.add(findViewById(R.id.custom_result_4));
+        result.add(findViewById(R.id.custom_result_5));
+        result.add(findViewById(R.id.custom_result_6));
+        result.add(findViewById(R.id.custom_result_7));
+        result.add(findViewById(R.id.custom_result_8));
+        result.add(findViewById(R.id.custom_result_9));
+        result.add(findViewById(R.id.custom_result_10));
+        answer.add(findViewById(R.id.custom_1));
+        answer.add(findViewById(R.id.custom_2));
+        answer.add(findViewById(R.id.custom_3));
+        answer.add(findViewById(R.id.custom_4));
+        answer.add(findViewById(R.id.custom_5));
+        answer.add(findViewById(R.id.custom_6));
+        answer.add(findViewById(R.id.custom_7));
+        answer.add(findViewById(R.id.custom_8));
+        answer.add(findViewById(R.id.custom_9));
+        answer.add(findViewById(R.id.custom_10));
+
+        for (int i = 0; i < 10; i++) {
+            answer.get(i).setText(ListeExercices.get(position).getQuestion(i));
+            answer.get(i).setTextSize(32);
         }
 
         progress = findViewById(R.id.progressBar);
@@ -93,18 +87,6 @@ public class AdditionExerciceActivity extends AppCompatActivity {
 
         confirm = findViewById(R.id.create_exercice_button);
 
-        confirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String[] tab = new String[10];
-                for (int i = 0; i < 10; i++) {
-                    tab[i] = answer.get(i).getText().toString();
-                }
-                Log.d("calculs a la base", Arrays.toString(tab));
-                CheckResults cr = new CheckResults(tab, result, activ);
-                cr.execute();
-            }
-        });
     }
 
     private void checkProgressBar() {
@@ -116,8 +98,4 @@ public class AdditionExerciceActivity extends AppCompatActivity {
         progress.setProgress(value, true);
     }
 
-    private void openDialog(String score) {
-        Dialog dialog = new Dialog().newInstance(score);
-        dialog.show(getSupportFragmentManager(), null);
-    }
 }

@@ -1,7 +1,11 @@
 package fr.univcotedazur.iut.info.m414.projet;
 
+import android.app.Activity;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.EditText;
+
+import androidx.fragment.app.FragmentActivity;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -14,7 +18,10 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Arrays;
+
+import fr.univcotedazur.iut.info.m414.projet.exercices.Dialog;
 
 public class CheckResults extends AsyncTask<Void, Void, Void> {
 
@@ -22,8 +29,14 @@ public class CheckResults extends AsyncTask<Void, Void, Void> {
 
     private final int[] result = new int[10];
 
-    public CheckResults(String[] calcul) {
+    private ArrayList<EditText> resultList;
+
+    private FragmentActivity activity;
+
+    public CheckResults(String[] calcul, ArrayList<EditText> r, FragmentActivity a) {
         this.calcul = calcul;
+        activity = a;
+        resultList = r;
         Log.d("calcul", Arrays.toString(calcul));
     }
 
@@ -97,5 +110,28 @@ public class CheckResults extends AsyncTask<Void, Void, Void> {
             e.printStackTrace();
         }
         return null;
+    }
+
+    @Override
+    protected void onPostExecute(Void aVoid) {
+        super.onPostExecute(aVoid);
+        int[] results = getResult();
+        int finalScore = 0;
+        for (int i = 0; i < 10; i++) {
+            if (resultList.get(i).getText().toString().trim().length() != 0) {
+                Log.d("premier", Integer.parseInt(resultList.get(i).getText().toString()) + "");
+                Log.d("deuxieme", results[i] + "");
+                if (Integer.parseInt(resultList.get(i).getText().toString()) == results[i]) {
+                    finalScore++;
+                }
+            }
+        }
+        Log.d("final Score", String.valueOf(finalScore));
+        openDialog(String.valueOf(finalScore));
+    }
+
+    private void openDialog(String score){
+        Dialog dialog = new Dialog().newInstance(score);
+        dialog.show(activity.getSupportFragmentManager(),null);
     }
 }

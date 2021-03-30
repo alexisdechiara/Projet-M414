@@ -10,6 +10,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -17,8 +18,13 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
+import fr.univcotedazur.iut.info.m414.projet.CheckResults;
 import fr.univcotedazur.iut.info.m414.projet.R;
 
 public class SoustractionExerciceActivity extends AppCompatActivity {
@@ -27,12 +33,14 @@ public class SoustractionExerciceActivity extends AppCompatActivity {
     private ArrayList<EditText> result = new ArrayList<>();
     private ArrayList<TextView> answer = new ArrayList<>();
     private ProgressBar progress;
+    private FragmentActivity activ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_soustraction_exercice);
         Random r = new Random();
+        activ = this;
         result.add(findViewById(R.id.soustraction_result_1));
         result.add(findViewById(R.id.soustraction_result_2));
         result.add(findViewById(R.id.soustraction_result_3));
@@ -94,29 +102,13 @@ public class SoustractionExerciceActivity extends AppCompatActivity {
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int finalScore = 0;
-                Log.d("click", "t'as cliqué");
-                try {
-                    URL url = new URL("http://api.mathjs.org/v4/");
-                    HttpURLConnection con = (HttpURLConnection) url.openConnection();
-                    con.setRequestMethod("POST");
-                    con.setRequestProperty("content-type", "application/json");
-                    con.setRequestProperty("accept", "application/json");
-                    con.setDoOutput(true);
-                    String jsonInputString = "{\"expr\": \"" + answer.get(0).getText().toString() + "\"}\"";
-                    OutputStream os = con.getOutputStream();
-                    byte[] input = jsonInputString.getBytes();
-                    os.write(input, 0, input.length);
-                    BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
-                    StringBuilder response = new StringBuilder();
-                    String responseLine = null;
-                    while ((responseLine = br.readLine()) != null) {
-                        response.append(responseLine.trim());
-                    }
-                    Log.d("je teste", response.toString());
-                } catch (Exception e) {
-                    Log.d("ui", e.getMessage());
+                String[] tab = new String[10];
+                for (int i = 0; i < 10; i++) {
+                    tab[i] = answer.get(i).getText().toString();
                 }
+                Log.d("calculs a la base", Arrays.toString(tab));
+                CheckResults cr = new CheckResults(tab, result, activ);
+                cr.execute();
             }
         });
     }

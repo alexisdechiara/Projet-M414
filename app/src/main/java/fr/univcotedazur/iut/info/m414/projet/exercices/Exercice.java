@@ -27,6 +27,10 @@ public class Exercice {
         return questions;
     }
 
+    public String getQuestion(int pos) {
+        return questions.get(pos);
+    }
+
     public void setQuestions(ArrayList<String> questions) {
         this.questions = questions;
     }

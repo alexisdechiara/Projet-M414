@@ -49,6 +49,34 @@ public class ExercicesCreesAdapter extends BaseAdapter {
         TextView tv = (TextView) layoutItem.findViewById(R.id.nom_exercice);
         tv.setText(ListeExercices.get(position).getTitre());
 
+        layoutItem.setTag(position);
+        layoutItem.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Integer position = (Integer)v.getTag();
+                sendListener(position);
+            }
+
+        });
+
         return layoutItem;
     }
+
+    private ArrayList<ExercicesCreesAdapterListener> mListListener = new ArrayList<>();
+
+    public void addListener(ExercicesCreesAdapterListener aListener) {
+        mListListener.add(aListener);
+    }
+
+    private void sendListener(int position) {
+        for(int i = mListListener.size()-1; i >= 0; i--) {
+            mListListener.get(i).onClickNom(position);
+        }
+    }
+
+    public interface ExercicesCreesAdapterListener {
+        public void onClickNom(int position);
+    }
+
 }

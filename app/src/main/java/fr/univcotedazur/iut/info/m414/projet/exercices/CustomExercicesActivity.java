@@ -9,10 +9,11 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import fr.univcotedazur.iut.info.m414.projet.MainActivity;
 import fr.univcotedazur.iut.info.m414.projet.R;
 import fr.univcotedazur.iut.info.m414.projet.keyboard.CalcKeyboard;
 
-public class CustomExercicesActivity extends AppCompatActivity {
+public class CustomExercicesActivity extends AppCompatActivity implements ExercicesCreesAdapter.ExercicesCreesAdapterListener{
 
     Button create;
 
@@ -31,6 +32,12 @@ public class CustomExercicesActivity extends AppCompatActivity {
 
         create.setOnClickListener(v -> startActivity(createExercice));
 
+    }
+
+    public void onClickNom(int position) {
+        Intent intent = new Intent(CustomExercicesActivity.this, CustomSpecificExerciceActivity.class);
+        intent.putExtra("position", position);
+        startActivity(intent);
     }
 
     @Override
