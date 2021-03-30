@@ -91,7 +91,7 @@ public class AdditionExerciceActivity extends AppCompatActivity {
                     }
                 });
 
-        confirm = findViewById(R.id.create_exercice_button);
+        confirm = findViewById(R.id.confirm_addition_button);
 
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override

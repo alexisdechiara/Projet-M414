@@ -2,6 +2,8 @@ package fr.univcotedazur.iut.info.m414.projet.exercices;
 
 import android.os.Bundle;
 import android.text.Editable;
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -11,7 +13,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
+import fr.univcotedazur.iut.info.m414.projet.CheckResults;
 import fr.univcotedazur.iut.info.m414.projet.R;
 
 
@@ -85,7 +89,20 @@ public class CustomSpecificExerciceActivity extends AppCompatActivity {
                     }
                 });
 
-        confirm = findViewById(R.id.create_exercice_button);
+        confirm = findViewById(R.id.custom_confirm);
+
+        confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String[] tab = new String[10];
+                for (int i = 0; i < 10; i++) {
+                    tab[i] = answer.get(i).getText().toString();
+                }
+                Log.d("calculs a la base", Arrays.toString(tab));
+                CheckResults cr = new CheckResults(tab, result, activ);
+                cr.execute();
+            }
+        });
 
     }
 

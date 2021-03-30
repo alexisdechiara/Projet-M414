@@ -353,7 +353,7 @@
                 android:max="10" />
 
         <Button
-                android:id="@+id/create_exercice_button"
+                android:id="@+id/confirm_addition_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Confirmer"

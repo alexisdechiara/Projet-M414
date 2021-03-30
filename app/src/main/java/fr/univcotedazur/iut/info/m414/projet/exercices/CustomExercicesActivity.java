@@ -25,6 +25,7 @@ public class CustomExercicesActivity extends AppCompatActivity implements Exerci
         ListView listExos = (ListView) findViewById(R.id.listeExercicesCrees);
         ExercicesCreesAdapter adapter = new ExercicesCreesAdapter(this);
         listExos.setAdapter(adapter);
+        adapter.addListener(this);
 
         create = findViewById(R.id.create_exercice_button);
 
@@ -46,6 +47,7 @@ public class CustomExercicesActivity extends AppCompatActivity implements Exerci
         ListView listExos = (ListView) findViewById(R.id.listeExercicesCrees);
         ExercicesCreesAdapter adapter = new ExercicesCreesAdapter(this);
         listExos.setAdapter(adapter);
+        adapter.addListener(this);
         Log.d("test", "test");
     }
 }
