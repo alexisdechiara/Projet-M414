@@ -7,6 +7,30 @@ public class Exercice {
     private boolean sendSMS;
     private ArrayList<String> questions;
 
+    public String getTitre() {
+        return titre;
+    }
+
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
+
+    public boolean isSendSMS() {
+        return sendSMS;
+    }
+
+    public void setSendSMS(boolean sendSMS) {
+        this.sendSMS = sendSMS;
+    }
+
+    public ArrayList<String> getQuestions() {
+        return questions;
+    }
+
+    public void setQuestions(ArrayList<String> questions) {
+        this.questions = questions;
+    }
+
     public Exercice(String t, boolean SMS, ArrayList<String> q) {
         titre = t;
         sendSMS = SMS;
