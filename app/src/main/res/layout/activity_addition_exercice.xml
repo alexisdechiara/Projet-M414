@@ -20,63 +20,100 @@
                 android:gravity="center"
                 android:layout_gravity="center_horizontal">
 
+
+
+
+
             <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="right"
+                android:layout_gravity="right">
+
+                <TextView
+                    android:id="@+id/addition_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="right"
-                    android:layout_gravity="right">
+                    android:inputType="number" />
 
                 <TextView
-                        android:id="@+id/addition_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:inputType="number" />
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=" = "
-                        android:layout_margin="5dp"
-                        android:textSize="32sp" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" = "
+                    android:layout_margin="5dp"
+                    android:textSize="32sp" />
 
                 <EditText
-                        android:id="@+id/addition_result_2"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:inputType="number"
-                        android:layout_margin="5dp"
-                        android:textSize="32sp" />
+                    android:id="@+id/addition_result_1"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:layout_margin="5dp"
+                    android:textSize="32sp" />
+
+            </LinearLayout>
+
+            <!--2-->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="right"
+                android:layout_gravity="right">
+
+                <TextView
+                    android:id="@+id/addition_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" = "
+                    android:layout_margin="5dp"
+                    android:textSize="32sp" />
+
+                <EditText
+                    android:id="@+id/addition_result_2"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:layout_margin="5dp"
+                    android:textSize="32sp" />
 
             </LinearLayout>
 
             <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="right"
+                android:layout_gravity="right">
+
+                <TextView
+                    android:id="@+id/addition_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="right"
-                    android:layout_gravity="right">
+                    android:inputType="number"
+                    android:textSize="25sp" />
 
                 <TextView
-                        android:id="@+id/addition_8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:inputType="number" />
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=" = "
-                        android:textSize="32sp"
-                        android:layout_margin="5dp" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" = "
+                    android:textSize="32sp"
+                    android:layout_margin="5dp" />
 
                 <EditText
-                        android:id="@+id/addition_result_8"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:inputType="number"
-                        android:textSize="32sp"
-                        android:layout_margin="5dp" />
+                    android:id="@+id/addition_result_3"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:textSize="32sp"
+                    android:layout_margin="5dp" />
 
             </LinearLayout>
 
@@ -111,32 +148,32 @@
             </LinearLayout>
 
             <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="right"
+                android:layout_gravity="right">
+
+                <TextView
+                    android:id="@+id/addition_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="right"
-                    android:layout_gravity="right">
+                    android:inputType="number" />
 
                 <TextView
-                        android:id="@+id/addition_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:inputType="number" />
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=" = "
-                        android:layout_margin="5dp"
-                        android:textSize="32sp" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" = "
+                    android:textSize="32sp"
+                    android:layout_margin="5dp" />
 
                 <EditText
-                        android:id="@+id/addition_result_1"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:inputType="number"
-                        android:layout_margin="5dp"
-                        android:textSize="32sp" />
+                    android:id="@+id/addition_result_5"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:textSize="32sp"
+                    android:layout_margin="5dp" />
 
             </LinearLayout>
 
@@ -201,6 +238,66 @@
             </LinearLayout>
 
             <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="right"
+                android:layout_gravity="right">
+
+                <TextView
+                    android:id="@+id/addition_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" = "
+                    android:textSize="32sp"
+                    android:layout_margin="5dp" />
+
+                <EditText
+                    android:id="@+id/addition_result_8"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:textSize="32sp"
+                    android:layout_margin="5dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="right"
+                android:layout_gravity="right">
+
+                <TextView
+                    android:id="@+id/addition_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" = "
+                    android:textSize="32sp"
+                    android:layout_margin="5dp" />
+
+                <EditText
+                    android:id="@+id/addition_result_9"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:textSize="32sp"
+                    android:layout_margin="5dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -230,96 +327,11 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="right"
-                    android:layout_gravity="right">
 
-                <TextView
-                        android:id="@+id/addition_9"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:inputType="number" />
 
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=" = "
-                        android:textSize="32sp"
-                        android:layout_margin="5dp" />
 
-                <EditText
-                        android:id="@+id/addition_result_9"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:inputType="number"
-                        android:textSize="32sp"
-                        android:layout_margin="5dp" />
 
-            </LinearLayout>
 
-            <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="right"
-                    android:layout_gravity="right">
-
-                <TextView
-                        android:id="@+id/addition_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:inputType="number"
-                        android:textSize="25sp" />
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=" = "
-                        android:textSize="32sp"
-                        android:layout_margin="5dp" />
-
-                <EditText
-                        android:id="@+id/addition_result_3"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:inputType="number"
-                        android:textSize="32sp"
-                        android:layout_margin="5dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="right"
-                    android:layout_gravity="right">
-
-                <TextView
-                        android:id="@+id/addition_5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:inputType="number" />
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=" = "
-                        android:textSize="32sp"
-                        android:layout_margin="5dp" />
-
-                <EditText
-                        android:id="@+id/addition_result_5"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:inputType="number"
-                        android:textSize="32sp"
-                        android:layout_margin="5dp" />
-
-            </LinearLayout>
 
         </LinearLayout>
 

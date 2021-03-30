@@ -33,63 +33,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton settings;
 
 
-    public static int[] checkResult(String[] calcul) {
-        String query = "http://api.mathjs.org/v4/";
 
-        try {
-            URL obj = new URL(query);
-            HttpURLConnection postConnection = null;
-            postConnection = (HttpURLConnection) obj.openConnection();
-            postConnection.setRequestMethod("POST");
-            postConnection.setRequestProperty("Content-Type", "application/json");
-            StringBuilder POST_PARAMS = new StringBuilder("{" + "\"expr\": [");
-            for (int i = 0; i < calcul.length; i++) {
-                calcul[i] = calcul[i].replaceAll("\\s+", "");
-                POST_PARAMS.append("\"").append(calcul[i]).append("\"");
-                if (i != calcul.length - 1) {
-                    POST_PARAMS.append(", ");
-                }
-            }
-            POST_PARAMS.append("]}");
-
-            postConnection.setDoOutput(true);
-            OutputStream os = postConnection.getOutputStream();
-            os.write(POST_PARAMS.toString().getBytes());
-            os.flush();
-            os.close();
-
-            int responseCode = postConnection.getResponseCode();
-
-            if (responseCode == HttpURLConnection.HTTP_OK) {
-                BufferedReader in = new BufferedReader(new InputStreamReader(postConnection.getInputStream()));
-                String inputLine;
-                StringBuilder response = new StringBuilder();
-
-                while ((inputLine = in.readLine()) != null) {
-                    response.append(inputLine);
-                }
-                in.close();
-                String test = response.toString();
-                JSONParser parser = new JSONParser();
-                JSONObject jsonObject = (JSONObject) parser.parse(test);
-                JSONArray jsonArray = (JSONArray) jsonObject.get("result");
-                int[] finalResult = new int[10];
-                for (int i = 0; i < jsonArray.size(); i++) {
-                    String number = (String) jsonArray.get(i);
-                    if (!number.contains("."))
-                        finalResult[i] = Integer.parseInt(number);
-                    else {
-                        double cast = Double.parseDouble(number);
-                        finalResult[i] = (int) cast;
-                    }
-                }
-                return finalResult;
-            }
-        } catch (IOException | ParseException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
 
 
     public static boolean isValid(String calcul) {

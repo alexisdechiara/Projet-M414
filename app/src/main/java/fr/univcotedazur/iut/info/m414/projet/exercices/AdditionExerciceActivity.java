@@ -21,8 +21,11 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
+import fr.univcotedazur.iut.info.m414.projet.CheckResults;
 import fr.univcotedazur.iut.info.m414.projet.MainActivity;
 import fr.univcotedazur.iut.info.m414.projet.R;
 
@@ -102,15 +105,26 @@ public class AdditionExerciceActivity extends AppCompatActivity {
                 for (int i = 0; i < 10; i++) {
                     tab[i] = answer.get(i).getText().toString();
                 }
-                int[] results = MainActivity.checkResult(tab);
+                Log.d("calculs a la base", Arrays.toString(tab));
+                CheckResults cr = new CheckResults(tab);
+                cr.execute();
+                try {
+                    cr.get(1000, TimeUnit.MILLISECONDS);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                int[] results = cr.getResult();
                 int finalScore = 0;
                 for (int i = 0; i < 10; i++) {
                     if (result.get(i).getText().toString().trim().length() != 0) {
+                        Log.d("premier", Integer.parseInt(result.get(i).getText().toString()) + "");
+                        Log.d("deuxieme", results[i] + "");
                         if (Integer.parseInt(result.get(i).getText().toString()) == results[i]) {
                             finalScore++;
                         }
                     }
                 }
+                Log.d("final Score", String.valueOf(finalScore));
                 openDialog(String.valueOf(finalScore));
             }
         });
